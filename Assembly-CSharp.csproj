@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{BE91F03A-8CC5-9ADF-AF5B-52970AD912FF}</ProjectGuid>
+    <ProjectGuid>{030C6809-4658-864B-460D-FB66660D2591}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -51,13 +51,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\models\Lava_Flowing_Shader\Scripts\ScrollingUVs_Layers.cs" />
      <Compile Include="Assets\Script\CameraControl.cs" />
+     <Compile Include="Assets\Script\CylinderGenerate.cs" />
+     <Compile Include="Assets\Script\CylinderScript.cs" />
      <Compile Include="Assets\Script\EventManergerScript.cs" />
      <Compile Include="Assets\Script\HookShot.cs" />
      <Compile Include="Assets\Script\HookTravel.cs" />
+     <Compile Include="Assets\Script\LavaAscending.cs" />
      <Compile Include="Assets\Script\PlayerControl.cs" />
      <Compile Include="Assets\Script\ThirdPersonCameraControl.cs" />
      <Compile Include="Assets\Script\youllFloatToo.cs" />
+     <None Include="Assets\models\Lava_Flowing_Shader\Shaders\Unlit_Lava_Simple.shader" />
+     <None Include="Assets\models\Lava_Flowing_Shader\Shaders\Diffuse_Lava_Distort.shader" />
+     <None Include="Assets\models\Lava_Flowing_Shader\Shaders\Unlit_Lava_Distort.shader" />
+     <None Include="Assets\models\Lava_Flowing_Shader\Shaders\Unlit_Lava_Distort_Transparent.shader" />
+     <None Include="Assets\models\Lava_Flowing_Shader\ReadMe.txt" />
+ <Reference Include="Facebook.Unity.Settings">
+ <HintPath>C:/Users/Joshua Chung/Documents/GitHub/grapp/Grapple-Game/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

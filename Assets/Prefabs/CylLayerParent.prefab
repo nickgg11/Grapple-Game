@@ -881,7 +881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db6735c2081b61f4d9f9fe983bd91eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyTime: 5
+  destroyTime: 50
   materials:
   - {fileID: 2100000, guid: 27a27d2b5a2181d42acb49dea075fe11, type: 2}
   - {fileID: 2100000, guid: 270ec3bc9e221ae4fb28d64f985c7ab1, type: 2}

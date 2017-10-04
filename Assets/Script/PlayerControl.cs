@@ -12,7 +12,7 @@ public class PlayerControl : MonoBehaviour {
 	public GameObject Camera;
 	public float dashSpeed = 5f;
 	public float pullSpeed=2f;
-
+	public float maxVel=40f;
 
 
 
@@ -56,7 +56,10 @@ public class PlayerControl : MonoBehaviour {
 				rb.useGravity = false;
 			}
 			hookTimer += Time.deltaTime;
-			rb.AddForce ((hookScript.hookTarget-transform.position)*pullSpeed);
+			if (rb.velocity.magnitude <= maxVel) {
+				rb.AddForce ((hookScript.hookTarget-transform.position)*pullSpeed);
+			}
+
 
 		}
 
