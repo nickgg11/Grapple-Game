@@ -48,7 +48,6 @@ public class HookShot : MonoBehaviour {
 			grapple ();
 
 			timer = 0;
-			t = 0;
 		}
 
 
@@ -68,7 +67,7 @@ public class HookShot : MonoBehaviour {
 			
 
 		}else{
-			gunLine.enabled = false;
+			//gunLine.enabled = false;
 			transform.position = player.transform.position;
 			transform.rotation = Quaternion.LookRotation (cam.ViewportPointToRay(new Vector3(0.5f,0.5f,0)).direction);
 		}
@@ -76,11 +75,11 @@ public class HookShot : MonoBehaviour {
 
 
 	void grapple(){
-		gunLine.enabled = true;
-		gunLine.SetPosition (0, player.transform.position);
+		//gunLine.enabled = true;
+		//gunLine.SetPosition (0, player.transform.position);
 		shootRay=cam.ViewportPointToRay(new Vector3(0.5f,0.5f,0));
 		if (Physics.Raycast (shootRay, out shootHit, hookRange)) {
-			gunLine.SetPosition (1, shootHit.point);
+			//gunLine.SetPosition (1, shootHit.point);
 			hookTarget= shootHit.point;
 			startPosition = transform.position;
 			sound.Play();

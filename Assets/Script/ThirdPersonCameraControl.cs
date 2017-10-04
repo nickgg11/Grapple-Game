@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ThirdPersonCameraControl : MonoBehaviour {
 
 
@@ -27,10 +28,18 @@ public class ThirdPersonCameraControl : MonoBehaviour {
 		
 		transform.position = player.transform.position + offset;
 
-			transform.eulerAngles = new Vector3 (pitch, yaw, 0f);
+        if (Mathf.Abs(pitch )> 75)
+        {
+            pitch = pitch / Mathf.Abs(pitch) * 75;
+            transform.eulerAngles = new Vector3(pitch, yaw, 0f);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(pitch, yaw, 0f);
 
+        }
 
-	}
+    }
 
 
 }
