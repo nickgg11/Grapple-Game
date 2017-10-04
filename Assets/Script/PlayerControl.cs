@@ -40,7 +40,7 @@ public class PlayerControl : MonoBehaviour {
 	void FixedUpdate()
 	{
 		print (hookTimer);
-		if ((transform.position - hookScript.hookTarget).magnitude <= 2||hookTimer>5) {
+		if ((transform.position - hookScript.hookTarget).magnitude <= 2||hookTimer>5||anyInput()) {
 			hookScript.hookLanded = false;
 
 		}
@@ -65,6 +65,13 @@ public class PlayerControl : MonoBehaviour {
 
 
 
+	}
+	bool anyInput(){
+		if (Input.GetAxis ("Horizontal") != 0f || Input.GetAxis ("Vertical") != -0f || Input.GetKey ("space"))
+			return true;
+
+
+		return false;
 	}
 	void basicMovement(){
 		if (Input.GetKey ("space")) {
@@ -100,7 +107,9 @@ public class PlayerControl : MonoBehaviour {
 
 	private void OnTriggerEnter(Collider other)
 	{
-		
+		if(!other.gameObject.CompareTag("hook")){
+			hookScript.hookLanded = false;
+		}
 	}
 
 }
