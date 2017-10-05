@@ -11,7 +11,7 @@ public class HookShot : MonoBehaviour {
 	public Vector3 hookTarget;
 
 	RaycastHit shootHit;
-	LineRenderer gunLine;
+	
 	private Camera cam;
 	float timer=0f;
 	Ray shootRay;
@@ -29,7 +29,7 @@ public class HookShot : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		gunLine = GetComponent<LineRenderer> ();
+		
 		cam = Camer.GetComponent <Camera>();
 		sound = GetComponent<AudioSource> ();
 	}
@@ -67,7 +67,7 @@ public class HookShot : MonoBehaviour {
 			
 
 		}else{
-			//gunLine.enabled = false;
+			
 			transform.position = player.transform.position;
 			transform.rotation = Quaternion.LookRotation (cam.ViewportPointToRay(new Vector3(0.5f,0.5f,0)).direction);
 		}
@@ -75,16 +75,20 @@ public class HookShot : MonoBehaviour {
 
 
 	void grapple(){
-		//gunLine.enabled = true;
-		//gunLine.SetPosition (0, player.transform.position);
+		
 		shootRay=cam.ViewportPointToRay(new Vector3(0.5f,0.5f,0));
 		if (Physics.Raycast (shootRay, out shootHit, hookRange)) {
-			//gunLine.SetPosition (1, shootHit.point);
-			hookTarget= shootHit.point;
-			startPosition = transform.position;
-			sound.Play();
-		} else {
-			hookTravelling = false;
-		}
+            if (shootHit.collider.CompareTag("cylinder"))
+            {
+                hookTarget = shootHit.point;
+                startPosition = transform.position;
+                sound.Play();
+                return;
+            }
+            
+			
+		} 
+		hookTravelling = false;
+		
 	}
 }

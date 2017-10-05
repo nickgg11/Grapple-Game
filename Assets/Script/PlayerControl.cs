@@ -12,8 +12,8 @@ public class PlayerControl : MonoBehaviour {
 	public GameObject Camera;
 	public float dashSpeed = 5f;
 	public float pullSpeed=2f;
-	public float maxVel=40f;
-
+	public float maxPullVel=40f;
+    public bool holdSpace=true;
 
 
 	private bool gravityStatus = true;
@@ -39,7 +39,7 @@ public class PlayerControl : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		print (hookTimer);
+        hookTimer += Time.deltaTime;
 		if ((transform.position - hookScript.hookTarget).magnitude <= 2||hookTimer>5||anyInput()) {
 			hookScript.hookLanded = false;
 
@@ -56,7 +56,7 @@ public class PlayerControl : MonoBehaviour {
 				rb.useGravity = false;
 			}
 			hookTimer += Time.deltaTime;
-			if (rb.velocity.magnitude <= maxVel) {
+			if (rb.velocity.magnitude <= maxPullVel) {
 				rb.AddForce ((hookScript.hookTarget-transform.position)*pullSpeed);
 			}
 
@@ -74,7 +74,7 @@ public class PlayerControl : MonoBehaviour {
 		return false;
 	}
 	void basicMovement(){
-		if (Input.GetKey ("space")) {
+		if (Input.GetKey ("space")&&holdSpace) {
 			rb.AddForce (Vector3.up * thrustSpeed, ForceMode.Impulse);
 		}
 
@@ -102,13 +102,18 @@ public class PlayerControl : MonoBehaviour {
 	}
 
 
+    public void hookDetach()
+    {
+        hookScript.hookLanded = false;
 
+    }
 
 
 	private void OnTriggerEnter(Collider other)
 	{
 		if(!other.gameObject.CompareTag("hook")){
 			hookScript.hookLanded = false;
+            print("notmove");
 		}
 	}
 

@@ -29,7 +29,7 @@ public class TrapSpawnScript : MonoBehaviour {
                 pos.x *= -1f;
             }
 
-            pos.y = player.transform.position.y + 40;
+            pos.y = player.transform.position.y + 80;
             Quaternion rotation = new Quaternion(0, 0, 0, 1);
             Instantiate(traps[0],pos,rotation);
             timer = 0;
