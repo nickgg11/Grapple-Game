@@ -43,7 +43,7 @@ public class HookShot : MonoBehaviour {
 
 
 		timer += Time.deltaTime;
-		if (Input.GetButton ("Fire1")&&timer>cd) {
+		if (Input.GetButton ("Fire1")&&timer>cd&&!hookLanded) {
 			hookTravelling = true;
 			grapple ();
 

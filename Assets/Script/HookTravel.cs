@@ -8,11 +8,13 @@ public class HookTravel : MonoBehaviour {
 	public float lineOffset=2f;
 	public bool right;
 	Camera cam;
+    HookShot parentt;
 	LineRenderer line;
 	HookShot hookShot;
 	Vector3 offset;
 	// Use this for initialization
 	void Start () {
+        parentt = GetComponentInParent<HookShot>();
 		line = GetComponent<LineRenderer> ();
 		hookShot = player.GetComponent<HookShot> ();
 		cam = Camera.GetComponent<Camera> ();
