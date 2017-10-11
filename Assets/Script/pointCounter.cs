@@ -37,7 +37,7 @@ public class pointCounter : MonoBehaviour {
         countText.text = "Points: " + pointcount.ToString();
         if (pointcount >= 500)
         {
-            arrow = true;
+            
         }
     }
 }
