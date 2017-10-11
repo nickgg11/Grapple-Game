@@ -78,6 +78,7 @@ public class HookShot : MonoBehaviour {
 	void grapple(){
 		
 		shootRay=cam.ViewportPointToRay(new Vector3(0.5f,0.5f,0));
+        shootRay.origin = shootRay.origin + shootRay.direction.normalized;
 		if (Physics.Raycast (shootRay, out shootHit, hookRange)) {
             if (shootHit.collider.CompareTag("cylinder"))
             {
