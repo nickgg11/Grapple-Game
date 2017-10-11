@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class HookShot : MonoBehaviour {
 
 	public float cd=2f;
@@ -9,7 +9,7 @@ public class HookShot : MonoBehaviour {
 	public GameObject Camer;
 	public float hookRange = 100;
 	public Vector3 hookTarget;
-
+    public Slider slide;
 	RaycastHit shootHit;
 	
 	private Camera cam;
@@ -29,8 +29,8 @@ public class HookShot : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-		cam = Camer.GetComponent <Camera>();
+        slide.maxValue = cd;
+        cam = Camer.GetComponent <Camera>();
 		sound = GetComponent<AudioSource> ();
 	}
 	
@@ -39,15 +39,16 @@ public class HookShot : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		
 
 
+
+        slide.value = cd-timer;
 		timer += Time.deltaTime;
 		if (Input.GetButton ("Fire1")&&timer>cd&&!hookLanded) {
 			hookTravelling = true;
 			grapple ();
 
-			timer = 0;
+			
 		}
 
 
@@ -83,6 +84,7 @@ public class HookShot : MonoBehaviour {
                 hookTarget = shootHit.point;
                 startPosition = transform.position;
                 sound.Play();
+                timer = 0;
                 return;
             }
             

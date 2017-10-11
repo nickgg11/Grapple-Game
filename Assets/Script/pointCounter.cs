@@ -9,7 +9,7 @@ public class pointCounter : MonoBehaviour {
     public GameObject player;
     public bool[] traps;
     private float cameraY;
-    private int pointcount;
+    public int pointcount;
 	// Use this for initialization
 	private void Start () {
         pointcount = 0;
