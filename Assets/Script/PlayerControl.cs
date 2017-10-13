@@ -15,7 +15,7 @@ public class PlayerControl : MonoBehaviour {
 	public float maxPullVel=40f;
     public bool holdSpace=true;
 
-
+    bool playerDisabled = false;
 	private bool gravityStatus = true;
 	HookShot hookScript;
 	private Rigidbody rb;
@@ -40,14 +40,22 @@ public class PlayerControl : MonoBehaviour {
 	void FixedUpdate()
 	{
         hookTimer += Time.deltaTime;
-		if ((transform.position - hookScript.hookTarget).magnitude <= 2||hookTimer>5||anyInput()) {
+		if ((transform.position - hookScript.hookTarget).magnitude <= 2||hookTimer>5) {
 			hookScript.hookLanded = false;
-
-		}
+            rb.useGravity = true;
+        }
 		if (!hookScript.hookLanded) {
-			rb.useGravity = true;
-			basicMovement ();
-			velReset = true;
+            if (!velReset)
+            {
+                
+                velReset = true;
+            }
+			
+            if (!playerDisabled)
+            {
+                basicMovement();
+            }
+			
 			hookTimer = 0;
 		} else {
 			if (velReset) {
@@ -107,9 +115,25 @@ public class PlayerControl : MonoBehaviour {
         hookScript.hookLanded = false;
 
     }
+    public void disablePlayer()
+    {
+        rb.useGravity = false;
+        hookScript.hookLanded = false;
+        playerDisabled = true;
+        rb.velocity = Vector3.zero;
+        hookScript.hookShotDisable = true;
 
+    }
 
-	private void OnTriggerEnter(Collider other)
+    public void freePlayer()
+    {
+        rb.useGravity = true;
+        playerDisabled = false;
+        hookScript.hookShotDisable = false;
+
+    }
+
+    private void OnTriggerEnter(Collider other)
 	{
 		if(other.gameObject.CompareTag("trap")||other.gameObject.CompareTag("lava")){
 			hookScript.hookLanded = false;

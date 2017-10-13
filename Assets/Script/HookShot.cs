@@ -11,7 +11,8 @@ public class HookShot : MonoBehaviour {
 	public Vector3 hookTarget;
     public Slider slide;
 	RaycastHit shootHit;
-	
+
+    public bool hookShotDisable = false;
 	private Camera cam;
 	float timer=0f;
 	Ray shootRay;
@@ -44,7 +45,7 @@ public class HookShot : MonoBehaviour {
 
         slide.value = cd-timer;
 		timer += Time.deltaTime;
-		if (Input.GetButton ("Fire1")&&timer>cd&&!hookLanded) {
+		if (Input.GetButton ("Fire1")&&timer>cd&&!hookLanded&&!hookShotDisable) {
 			hookTravelling = true;
 			grapple ();
 
