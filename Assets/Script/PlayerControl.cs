@@ -111,10 +111,12 @@ public class PlayerControl : MonoBehaviour {
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if(!other.gameObject.CompareTag("hook")){
+		if(other.gameObject.CompareTag("trap")||other.gameObject.CompareTag("lava")){
 			hookScript.hookLanded = false;
+			hookScript.hookTravelling = false;
             print("notmove");
 		}
 	}
+
 
 }

@@ -22,8 +22,9 @@ public class FlyInBlock : MonoBehaviour {
 	void FixedUpdate () {
         if (player.transform.position.y - transform.position.y < 20f)
         {
-            rb.AddForce(flyInDirection*flyInSpeed,ForceMode.Impulse);
-
+          //  rb.AddForce(flyInDirection*flyInSpeed,ForceMode.Impulse);
+			rb.AddForce((player.transform.position-transform.position).normalized*flyInSpeed,ForceMode.Impulse);
+			transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
         }
 
 	}

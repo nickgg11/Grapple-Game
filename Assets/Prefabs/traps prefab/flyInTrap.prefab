@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 54588531964578456}
   m_Layer: 9
   m_Name: flyInTrap
-  m_TagString: Untagged
+  m_TagString: trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,4 +121,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d323b398391bf4b9d9f917ee4f371f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flyInSpeed: 1
+  flyInSpeed: 5
