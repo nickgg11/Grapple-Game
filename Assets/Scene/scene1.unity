@@ -283,6 +283,11 @@ Prefab:
       propertyPath: trapsSpawnPoint.Array.data[1]
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 114796396312261746, guid: 318d6fdefd3b28a40b3cb2be56829553,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 318d6fdefd3b28a40b3cb2be56829553, type: 2}
   m_IsPrefabParent: 0
@@ -2585,7 +2590,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &887817595
 Transform:
   m_ObjectHideFlags: 0
@@ -3226,6 +3231,65 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1176317845}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1178728428
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4388939551893228, guid: c3f6809d68e08dc439af96c9d5380f28, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -17.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388939551893228, guid: c3f6809d68e08dc439af96c9d5380f28, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 24.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388939551893228, guid: c3f6809d68e08dc439af96c9d5380f28, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388939551893228, guid: c3f6809d68e08dc439af96c9d5380f28, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388939551893228, guid: c3f6809d68e08dc439af96c9d5380f28, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388939551893228, guid: c3f6809d68e08dc439af96c9d5380f28, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388939551893228, guid: c3f6809d68e08dc439af96c9d5380f28, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388939551893228, guid: c3f6809d68e08dc439af96c9d5380f28, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388939551893228, guid: c3f6809d68e08dc439af96c9d5380f28, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388939551893228, guid: c3f6809d68e08dc439af96c9d5380f28, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033285874108824, guid: c3f6809d68e08dc439af96c9d5380f28, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23523856529108700, guid: c3f6809d68e08dc439af96c9d5380f28,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3a1053c897392b8429abe644f3aa2e0a, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c3f6809d68e08dc439af96c9d5380f28, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1191032770
 GameObject:
   m_ObjectHideFlags: 0
@@ -6704,6 +6768,7 @@ GameObject:
   - component: {fileID: 2137026135}
   - component: {fileID: 2137026136}
   - component: {fileID: 2137026137}
+  - component: {fileID: 2137026138}
   m_Layer: 0
   m_Name: EventManager
   m_TagString: Untagged
@@ -6780,3 +6845,18 @@ MonoBehaviour:
   bearTrap: {fileID: 1204195094810660, guid: 50f91f3447f4299408dc5f343aed34ef, type: 2}
   spawningB: 0
   BearTrapSpawnRate: 5
+--- !u!114 &2137026138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2137026132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b6f9405204cf545a2b6dafed79a1a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hcTrap: {fileID: 1033285874108824, guid: c3f6809d68e08dc439af96c9d5380f28, type: 2}
+  frequency: 3
+  player: {fileID: 1411734658}
+  distanceBetween: 300
