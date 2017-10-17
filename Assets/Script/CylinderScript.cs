@@ -30,7 +30,8 @@ public class CylinderScript : MonoBehaviour {
 		{           
 			if (Random.Range (0, 100) <= bearTrapSpawnScript.BearTrapSpawnRate) {
 				Vector3 temp = (transform.position - Children [i].transform.position) * 0.06f + Children [i].transform.position;
-				bearTrapSpawnScript.spawnBearTrap (temp,Children[i].transform.rotation);
+                Quaternion quat = Quaternion.LookRotation(new Vector3(0,temp.y,0)-temp, Vector3.up);
+                bearTrapSpawnScript.spawnBearTrap (temp,quat);
 			}
 
 

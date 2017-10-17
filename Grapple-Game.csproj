@@ -90,16 +90,19 @@
     <Compile Include="Assets\Script\HookTravel.cs" />
     <Compile Include="Assets\Script\LavaAscending.cs" />
     <Compile Include="Assets\Script\PlayerControl.cs" />
+    <Compile Include="Assets\Script\PlayerHealth.cs" />
     <Compile Include="Assets\Script\pointCounter.cs" />
     <Compile Include="Assets\Script\ThirdPersonCameraControl.cs" />
     <Compile Include="Assets\Script\youllFloatToo.cs" />
     <Compile Include="Assets\scripts for traps\BearTrapScript.cs" />
     <Compile Include="Assets\scripts for traps\BearTrapSpawn.cs" />
     <Compile Include="Assets\scripts for traps\FlyInBlock.cs" />
+    <Compile Include="Assets\scripts for traps\HalfCoverTrapScript.cs" />
     <Compile Include="Assets\scripts for traps\HalfCoverTrapSpawn.cs" />
     <Compile Include="Assets\scripts for traps\TrapSpawnScript.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\imported\trap3\badfluid@gmail.com.txt" />
     <None Include="Assets\models\Lava_Flowing_Shader\ReadMe.txt" />
     <None Include="Assets\models\Lava_Flowing_Shader\Shaders\Diffuse_Lava_Distort.shader" />
     <None Include="Assets\models\Lava_Flowing_Shader\Shaders\Unlit_Lava_Distort.shader" />
