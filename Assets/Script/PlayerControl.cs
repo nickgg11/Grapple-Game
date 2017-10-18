@@ -39,29 +39,31 @@ public class PlayerControl : MonoBehaviour {
 
 	void FixedUpdate()
 	{
+		updateGravity ();
         hookTimer += Time.deltaTime;
-		if ((transform.position - hookScript.hookTarget).magnitude <= 2||hookTimer>5) {
+		if ((transform.position - hookScript.hookTarget).magnitude <= 2||hookTimer>5||Input.GetKey ("space")) {
 			hookScript.hookLanded = false;
-            rb.useGravity = true;
+			updateGravity (true);
+           
         }
+		if (!playerDisabled)
+		{
+			basicMovement();
+		}
 		if (!hookScript.hookLanded) {
             if (!velReset)
             {
-                
                 velReset = true;
             }
-			
-            if (!playerDisabled)
-            {
-                basicMovement();
-            }
-			
 			hookTimer = 0;
 		} else {
 			if (velReset) {
-				rb.velocity = Vector3.zero;
+				//rb.velocity = Vector3.zero;
+				if (rb.velocity.magnitude > 0) {
+					rb.velocity*=0.3f/rb.velocity.magnitude;
+				}
 				velReset = false;
-				rb.useGravity = false;
+				updateGravity (false);
 			}
 			hookTimer += Time.deltaTime;
 			if (rb.velocity.magnitude <= maxPullVel) {
@@ -117,7 +119,7 @@ public class PlayerControl : MonoBehaviour {
     }
     public void disablePlayer()
     {
-        rb.useGravity = false;
+		gravityStatus = false;
         hookScript.hookLanded = false;
         playerDisabled = true;
         rb.velocity = Vector3.zero;
@@ -127,7 +129,7 @@ public class PlayerControl : MonoBehaviour {
 
     public void freePlayer()
     {
-        rb.useGravity = true;
+		gravityStatus= true;
         playerDisabled = false;
         hookScript.hookShotDisable = false;
 
@@ -142,5 +144,16 @@ public class PlayerControl : MonoBehaviour {
 		}
 	}
 
+	void updateGravity(bool flag){
+		if (gravityStatus) {
+			rb.useGravity = flag;
+		} else {
+			rb.useGravity = false;
+		}
+	}
+
+	void updateGravity(){
+		rb.useGravity = gravityStatus;
+	}
 
 }

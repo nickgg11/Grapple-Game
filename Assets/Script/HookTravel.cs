@@ -18,7 +18,10 @@ public class HookTravel : MonoBehaviour {
 		line = GetComponent<LineRenderer> ();
 		hookShot = player.GetComponent<HookShot> ();
 		cam = Camera.GetComponent<Camera> ();
-		offset =  transform.position-player.transform.position ;
+
+		//offset =  transform.position-player.transform.position ;
+		//offset =  transform.position-GetComponentInParent<Transform>().position ;
+		offset = transform.position;
 	}
 	
 	// Update is called once per frame

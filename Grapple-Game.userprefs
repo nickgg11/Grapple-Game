@@ -1,12 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\CylinderScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\LavaAscending.cs">
     <Files>
-      <File FileName="Assets\Script\CylinderScript.cs" Line="31" Column="70" />
-      <File FileName="Assets\Script\LavaAscending.cs" Line="18" Column="2" />
-      <File FileName="Assets\scripts for traps\BearTrapSpawn.cs" Line="7" Column="37" />
-      <File FileName="Assets\scripts for traps\BearTrapScript.cs" Line="17" Column="4" />
-      <File FileName="Assets\Script\PlayerControl.cs" Line="112" Column="37" />
+      <File FileName="Assets\Script\CylinderScript.cs" Line="46" Column="29" />
+      <File FileName="Assets\Script\LavaAscending.cs" Line="34" Column="39" />
+      <File FileName="Assets\scripts for traps\BearTrapSpawn.cs" Line="7" Column="35" />
+      <File FileName="Assets\scripts for traps\BearTrapScript.cs" Line="45" Column="30" />
+      <File FileName="Assets\Script\PlayerControl.cs" Line="64" Column="6" />
+      <File FileName="Assets\Script\PlayerHealth.cs" Line="24" Column="39" />
+      <File FileName="Assets\Script\HookShot.cs" Line="12" Column="25" />
+      <File FileName="Assets\scripts for traps\FlyInBlock.cs" Line="25" Column="55" />
+      <File FileName="Assets\scripts for traps\TrapSpawnScript.cs" Line="16" Column="6" />
+      <File FileName="Assets\Script\HookTravel.cs" Line="23" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

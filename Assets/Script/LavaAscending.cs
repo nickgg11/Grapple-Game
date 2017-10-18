@@ -7,8 +7,11 @@ public class LavaAscending : MonoBehaviour {
     public GameObject player;
     float speedChange = 10f;
     public GameObject points;
+	public float dmgTick=3f;
     pointCounter pc;
 	Rigidbody rb;
+	float timer=0;
+	bool playerIn=false;
 	// Use this for initialization
 	void Start () {
         pc = points.GetComponent<pointCounter>();
@@ -30,5 +33,44 @@ public class LavaAscending : MonoBehaviour {
         {
             ascendSpeed = speedChange;
         }
+		if (playerIn) {
+			timer += Time.deltaTime;
+			if(timer>=dmgTick){
+				dmgPlayer ();
+				timer = 0f;
+			}
+
+		}
+
 	}
+
+	private void OnCollisionEnter(Collision other){
+		print("hitting");
+		if(other.gameObject.CompareTag("Player")){
+			dmgPlayer ();
+		
+		}
+	}
+
+	private void OnCollisionStay(Collision other){
+		if(other.gameObject.CompareTag("Player")){
+			playerIn = true;
+			StartCoroutine ("burnTick");
+		}
+		
+	}
+	private void OnCollisionExit(Collision other){
+		if(other.gameObject.CompareTag("Player")){
+			playerIn = false;
+		}
+
+	}
+
+
+
+	void dmgPlayer(){
+		PlayerHealth playHealth=player.GetComponent<PlayerHealth>();
+		playHealth.takeDmg(100f);
+	}
+
 }
