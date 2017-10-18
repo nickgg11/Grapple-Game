@@ -34,7 +34,7 @@ public class PlayerControl : MonoBehaviour {
 		count = 0;
 		hookScript = hook.GetComponent<HookShot> ();
 		rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
-
+		rb.useGravity = true;
 	}
 
 	void FixedUpdate()
@@ -55,6 +55,7 @@ public class PlayerControl : MonoBehaviour {
             {
                 velReset = true;
             }
+			updateGravity (true);
 			hookTimer = 0;
 		} else {
 			if (velReset) {
@@ -137,11 +138,13 @@ public class PlayerControl : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
 	{
+		/*
 		if(other.gameObject.CompareTag("trap")||other.gameObject.CompareTag("lava")){
 			hookScript.hookLanded = false;
 			hookScript.hookTravelling = false;
             print("notmove");
 		}
+		*/
 	}
 
 	void updateGravity(bool flag){

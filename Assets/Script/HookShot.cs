@@ -33,6 +33,7 @@ public class HookShot : MonoBehaviour {
         slide.maxValue = cd;
         cam = Camer.GetComponent <Camera>();
 		sound = GetComponent<AudioSource> ();
+		timer = cd;
 	}
 	
 	void LateUpdate(){

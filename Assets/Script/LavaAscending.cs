@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LavaAscending : MonoBehaviour {
 	public float ascendSpeed=10f;
+	public float countDown = 3f;
     public GameObject player;
     float speedChange = 10f;
     public GameObject points;
@@ -21,7 +22,10 @@ public class LavaAscending : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-
+		while (countDown > 0) {
+			countDown -= Time.deltaTime;
+			return;
+		}
         speedChange = 10f+0.3f*pc.pointcount / 50;
         
 		transform.Translate (0f,ascendSpeed*Time.deltaTime,0f,Space.World);
@@ -55,7 +59,7 @@ public class LavaAscending : MonoBehaviour {
 	private void OnCollisionStay(Collision other){
 		if(other.gameObject.CompareTag("Player")){
 			playerIn = true;
-			StartCoroutine ("burnTick");
+
 		}
 		
 	}
