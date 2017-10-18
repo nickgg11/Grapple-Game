@@ -5,27 +5,31 @@ using UnityEngine;
 public class CylinderScript : MonoBehaviour {
     
     public Material[] materials;
+    public string[] tagName;
 
     Renderer[] rend;
-	GameObject EventManager;
 	GameObject lavaFloor;
 	GameObject[] Children=new GameObject[10];
 
     // Use this for initialization
     void Start () {
-		EventManager=GameObject.Find("EventManager");
-		BearTrapSpawn bearTrapSpawnScript = EventManager.GetComponent<BearTrapSpawn> ();
+		
+		BearTrapSpawn bearTrapSpawnScript = GameObject.Find("EventManager").GetComponent<BearTrapSpawn> ();
 		lavaFloor = GameObject.Find ("Lava_distort");
         
 
         rend = GetComponentsInChildren<Renderer>();
 
+        //assign different wall texture and tags them
         for (int i=0;i< rend.Length;i++)
-         {           
+         {
             Children[i]=(rend[i].gameObject);
-            rend[i].material = materials[Random.Range(0, 4)]; 
+            int temp = Random.Range(0, materials.Length);
+            rend[i].material = materials[temp];
+            Children[i].tag = tagName[temp];
          }
 
+        //spawn bear trap
 		for (int i=0;i< Children.Length;i++)
 		{           
 			if (Random.Range (0, 100) <= bearTrapSpawnScript.BearTrapSpawnRate) {

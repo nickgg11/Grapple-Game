@@ -83,7 +83,7 @@ public class HookShot : MonoBehaviour {
         shootRay.origin = shootRay.origin + shootRay.direction.normalized;
 		//int layerMask = 6;
 		if (Physics.Raycast (shootRay, out shootHit, hookRange)) {
-            if (shootHit.collider.CompareTag("cylinder"))
+            if (shootHit.collider.gameObject.layer== LayerMask.NameToLayer("cylinder"))
             {
                 hookTarget = shootHit.point;
                 startPosition = transform.position;

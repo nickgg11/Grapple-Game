@@ -102,6 +102,23 @@
     <Compile Include="Assets\scripts for traps\TrapSpawnScript.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\imported\HighQualityBricks&amp;Walls\README.txt" />
+    <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\brick-807728.shader" />
+    <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\brick-957823.shader" />
+    <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\brick-957827.shader" />
+    <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\bricks-868344.shader" />
+    <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\patch-924648.shader" />
+    <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\shading-671263.shader" />
+    <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\stone-805287.shader" />
+    <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\texture-709723.shader" />
+    <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\tile-846018.shader" />
+    <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\wall-617961.shader" />
+    <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\wall-846013.shader" />
+    <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\wall-846015.shader" />
+    <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\wood-731407.shader" />
+    <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\wood-877000.shader" />
+    <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\wood-877365.shader" />
+    <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\wood-938698.shader" />
     <None Include="Assets\imported\trap3\badfluid@gmail.com.txt" />
     <None Include="Assets\models\Lava_Flowing_Shader\ReadMe.txt" />
     <None Include="Assets\models\Lava_Flowing_Shader\Shaders\Diffuse_Lava_Distort.shader" />

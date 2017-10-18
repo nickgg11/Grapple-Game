@@ -8,6 +8,10 @@ TagManager:
   - cylinder
   - lava
   - trap
+  - steelWall
+  - slipperyWall
+  - woodWall
+  - rottenWall
   layers:
   - Default
   - TransparentFX
