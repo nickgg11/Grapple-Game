@@ -85,12 +85,18 @@ public class PlayerControl : MonoBehaviour {
 		return false;
 	}
 	void basicMovement(){
-		if (Input.GetKey ("space")&&holdSpace) {
-			rb.AddForce (Vector3.up * thrustSpeed, ForceMode.Impulse);
-		}
 
-		if (Input.GetKey("c"))
-			rb.AddForce(-Vector3.up * 2*thrustSpeed, ForceMode.Impulse);
+        if (holdSpace)
+        {
+            if (Input.GetKey("space"))
+            {
+                rb.AddForce(Vector3.up * thrustSpeed, ForceMode.Impulse);
+            }
+
+            if (Input.GetKey("c"))
+                rb.AddForce(-Vector3.up * 2 * thrustSpeed, ForceMode.Impulse);
+        }
+		
 
 
 

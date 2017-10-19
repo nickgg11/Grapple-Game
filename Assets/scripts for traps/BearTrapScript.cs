@@ -8,6 +8,7 @@ public class BearTrapScript : MonoBehaviour {
     float timer = 0f;
     bool triggered = false;
     PlayerControl playControl;
+    public float dmg;
 	bool activate;
 	Animation anime;
 	AudioSource stabSound;
@@ -16,7 +17,7 @@ public class BearTrapScript : MonoBehaviour {
 		anime = GetComponentInChildren<Animation> ();
 		lavaFloor = GameObject.Find ("Lava_distort");
         playControl = GameObject.Find("player").GetComponent<PlayerControl>();
-		anime ["Up Down"].speed = 1.4f;
+		anime ["Up Down"].speed = 1f;
 		activate = true;
 		stabSound = GetComponent<AudioSource> ();
     }
@@ -47,7 +48,7 @@ public class BearTrapScript : MonoBehaviour {
 			if (activate) {
 				stabSound.Play ();
 				PlayerHealth playHealth=GameObject.Find("player").GetComponent<PlayerHealth>();
-				playHealth.takeDmg (100f);
+				playHealth.takeDmg (dmg);
 				anime.Play("Up Down");
 				playControl.disablePlayer();
 				triggered = true;

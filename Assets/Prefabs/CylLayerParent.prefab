@@ -882,9 +882,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materials:
-  - {fileID: 2100000, guid: 27a27d2b5a2181d42acb49dea075fe11, type: 2}
-  - {fileID: 2100000, guid: 270ec3bc9e221ae4fb28d64f985c7ab1, type: 2}
-  - {fileID: 2100000, guid: 984311b2037358d418cdd4d650f62c52, type: 2}
+  - {fileID: 2100000, guid: 27348c2da388ee24aadf8472f82ad963, type: 2}
+  - {fileID: 2100000, guid: 171d305832c1ff8439b29868a108e89f, type: 2}
+  - {fileID: 2100000, guid: 77826ad27882dcf4e8feded3f4ef9411, type: 2}
   - {fileID: 2100000, guid: 6eefc055ee419ea49af280cd42314208, type: 2}
   tagName:
   - rottenWall

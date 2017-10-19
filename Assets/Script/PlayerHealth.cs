@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour {
 
+    public GameObject cursor;
 	public float health=500f;
 	public Image dmgImage;
 	public Text hp;
@@ -14,11 +15,13 @@ public class PlayerHealth : MonoBehaviour {
 	float end=0.5f;
     bool dead = false;
 	Color imgCol;
-	// Use this for initialization
-	void Start () {
+    PlayerControl pControl;
+    // Use this for initialization
+    void Start () {
 		imgCol= dmgImage.color;
 		slide.maxValue = health;
-	}
+        pControl = this.gameObject.GetComponent<PlayerControl>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -26,9 +29,11 @@ public class PlayerHealth : MonoBehaviour {
 		hp.text = "HP: " + health.ToString();
         if (health <= 0)
         {
+            pControl.disablePlayer();
             if (!dead)
             {
-                Invoke("dieProcedure", 5f);
+                dieProcedure();
+                Invoke("reload", 5f);
             }
             dead = true;
         }
@@ -37,16 +42,17 @@ public class PlayerHealth : MonoBehaviour {
 
 	public void takeDmg(float dmg){
 		health -= dmg;
-       
 		StartCoroutine ("flash");
 
 	}
-    void dieProcedure()
+
+    void dieProcedure() {
+        cursor.SetActive(false);
+    }
+
+    void reload()
     {
-
-       
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
-
     }
 
 	IEnumerator flash(){

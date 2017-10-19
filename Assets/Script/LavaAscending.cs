@@ -53,6 +53,11 @@ public class LavaAscending : MonoBehaviour {
                 }
 
             }
+
+        if (player.transform.position.y < transform.position.y - 3)
+        {
+            player.transform.position = new Vector3 (player.transform.position.x, transform.position.y + 1, player.transform.position.z);
+        }
         if (playerHealth.health <= 0)
         {
             this.enabled = false;
