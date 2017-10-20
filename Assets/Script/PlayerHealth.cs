@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour {
-
+    public GameObject DeathMenu;
     public GameObject cursor;
 	public float health=500f;
 	public Image dmgImage;
@@ -33,7 +33,7 @@ public class PlayerHealth : MonoBehaviour {
             if (!dead)
             {
                 dieProcedure();
-                Invoke("reload", 5f);
+                //Invoke("reload", 5f);
             }
             dead = true;
         }
@@ -46,11 +46,16 @@ public class PlayerHealth : MonoBehaviour {
 
 	}
 
+
     void dieProcedure() {
         cursor.SetActive(false);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        DeathMenu.SetActive(true);
+
     }
 
-    void reload()
+    public void reload()
     {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }
