@@ -5,6 +5,7 @@ using UnityEngine;
 public class HalfCoverTrapSpawn : MonoBehaviour {
     
     public GameObject hcTrap;
+    public GameObject doorTrap;
     public float frequency=100;
     public GameObject player;
     public float distanceBetween = 200f;
@@ -31,11 +32,37 @@ public class HalfCoverTrapSpawn : MonoBehaviour {
                 pos.y += player.transform.position.y + 1000f;
                 lastY = pos.y;
                 Quaternion quat = Quaternion.LookRotation(temp, Vector3.up);
-                Instantiate(hcTrap, pos, quat);
+
+                if (Random.Range(0, 100) < 50)
+                {
+                    SpawnHalf(pos,quat);
+                }
+                else
+                {
+                    SpawnDoor(new Vector3(0,pos.y,0), quat);
+                }
+
+
             }
 
         }
         
 
 	}
+
+    void SpawnHalf(Vector3 pos, Quaternion quat)
+    {
+        Instantiate(hcTrap, pos, quat);
+
+    }
+
+
+
+    void SpawnDoor(Vector3 pos, Quaternion quat)
+    {
+        Instantiate(doorTrap, pos, quat);
+    }
+
+
+
 }

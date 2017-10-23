@@ -82,17 +82,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\models\Lava_Flowing_Shader\Scripts\ScrollingUVs_Layers.cs" />
+    <Compile Include="Assets\Script\bonusPointPickup.cs" />
     <Compile Include="Assets\Script\CameraControl.cs" />
     <Compile Include="Assets\Script\CylinderGenerate.cs" />
     <Compile Include="Assets\Script\CylinderScript.cs" />
     <Compile Include="Assets\Script\EventManergerScript.cs" />
-    <Compile Include="Assets\Script\Healing.cs" />
     <Compile Include="Assets\Script\HookShot.cs" />
     <Compile Include="Assets\Script\HookTravel.cs" />
     <Compile Include="Assets\Script\LavaAscending.cs" />
     <Compile Include="Assets\Script\PlayerControl.cs" />
     <Compile Include="Assets\Script\PlayerHealth.cs" />
     <Compile Include="Assets\Script\pointCounter.cs" />
+    <Compile Include="Assets\Script\PU Scripts\Healing.cs" />
+    <Compile Include="Assets\Script\PU Scripts\hookRange.cs" />
+    <Compile Include="Assets\Script\PU Scripts\PointsPUScript.cs" />
     <Compile Include="Assets\Script\RestartScript.cs" />
     <Compile Include="Assets\Script\ThirdPersonCameraControl.cs" />
     <Compile Include="Assets\Script\youllFloatToo.cs" />

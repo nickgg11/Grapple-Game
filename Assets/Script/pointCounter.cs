@@ -22,8 +22,8 @@ public class pointCounter : MonoBehaviour {
     void LateUpdate()
     {
         cameraY = player.transform.position.y;
-        pointcount = Mathf.RoundToInt(cameraY);
-        pointcount = pointcount / 3;
+        if(cameraY>pointcount*3)
+        pointcount += Mathf.RoundToInt(cameraY-pointcount/3);
        
 
         SetCountText();
