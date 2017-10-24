@@ -2237,14 +2237,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 1280002177519442, guid: a495a841b6954f1438dcc71e9c07e3d0, type: 2}
-      propertyPath: m_TagString
-      value: trap
-      objectReference: {fileID: 0}
-    - target: {fileID: 1309750258525224, guid: a495a841b6954f1438dcc71e9c07e3d0, type: 2}
-      propertyPath: m_TagString
-      value: trap
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a495a841b6954f1438dcc71e9c07e3d0, type: 2}
   m_IsPrefabParent: 0
