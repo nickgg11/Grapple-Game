@@ -25,11 +25,13 @@ public class PointsPUScript : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
-        print("pu");
+        
         if (other.CompareTag("Player"))
         {
+
             if (!used)
             {
+					print("pu");
                 pointCounter Playerpoints = GameObject.Find("Points").GetComponent<pointCounter>();
                 Playerpoints.pointcount += 300;
                 used = true;

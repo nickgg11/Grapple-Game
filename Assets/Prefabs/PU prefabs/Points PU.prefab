@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33457218072764896}
   - component: {fileID: 65394245444383864}
   - component: {fileID: 23495823072780458}
+  - component: {fileID: 114943679188473982}
   m_Layer: 2
   m_Name: Points PU
   m_TagString: Health
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000349194338704}
   m_LocalRotation: {x: 0.46193978, y: 0.19134173, z: 0.19134173, w: 0.84462327}
-  m_LocalPosition: {x: 0, y: 31.39, z: 11.41}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55,7 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ea14aa18b0f137d49ab9cd098edc7532, type: 2}
+  - {fileID: 2100000, guid: 0406ff427060fb34295f6cc7bb98858f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,3 +94,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114943679188473982
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000349194338704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9227e6e36e8e57488d5eb428f22cab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

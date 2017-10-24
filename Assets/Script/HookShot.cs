@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class HookShot : MonoBehaviour {
-
+	public GameObject clonePrefab;
 	public float cd=2f;
 	public GameObject player;
 	public GameObject Camer;
@@ -11,12 +11,15 @@ public class HookShot : MonoBehaviour {
 	public Vector3 hookTarget;
     public Slider slide;
 	RaycastHit shootHit;
+	RaycastHit blueHit;
+	RaycastHit prevHit;
 
+	GameObject clone;
     public bool hookShotDisable = false;
 	private Camera cam;
 	float timer=0f;
 	Ray shootRay;
-
+	Ray blueRay;
 	public bool hookLanded=false;
 	public bool hookTravelling=false;
 
@@ -34,6 +37,7 @@ public class HookShot : MonoBehaviour {
         cam = Camer.GetComponent <Camera>();
 		sound = GetComponent<AudioSource> ();
 		timer = cd;
+	
 	}
 	
 	void LateUpdate(){
@@ -57,8 +61,8 @@ public class HookShot : MonoBehaviour {
 		if (hookTravelling) {
 			t += Time.deltaTime / timeToReachTarget;
 			//transform.position = Vector3.Lerp (startPosition,shootHit.point,t);
-			transform.Translate ((shootHit.point - startPosition) * 1f * Time.deltaTime, Space.World);
-			if ((transform.position - shootHit.point).magnitude < 1) {
+			transform.Translate ((blueHit.point - startPosition) * 1f * Time.deltaTime, Space.World);
+			if ((transform.position - blueHit.point).magnitude < 1) {
 				hookTravelling = false;
 				hookLanded = true;
 			}
@@ -70,19 +74,43 @@ public class HookShot : MonoBehaviour {
 			
 
 		}else{
-			
+			blueIndicator ();
 			transform.position = player.transform.position;
 			transform.rotation = Quaternion.LookRotation (cam.ViewportPointToRay(new Vector3(0.5f,0.5f,0)).direction);
 		}
 	}
 
+	void blueIndicator(){
+		
+		blueRay=cam.ViewportPointToRay(new Vector3(0.5f,0.5f,0));
+		blueRay.origin = blueRay.origin + blueRay.direction.normalized;
+		if (Physics.Raycast (blueRay, out blueHit, hookRange)) {
+			Destroy (clone);
+			if(blueHit.collider.gameObject.layer== LayerMask.NameToLayer("cylinder")){
+				Vector3 temppp = blueHit.collider.gameObject.transform.position;
+				clone = Instantiate (clonePrefab, blueHit.collider.gameObject.transform);
+				temppp.y = 0;
+				//clone.transform.Translate (-temppp.normalized * 2f);
+				MeshFilter mesh = clone.GetComponent<MeshFilter> ();
+				mesh = blueHit.collider.gameObject.GetComponent<MeshFilter> ();
+			}
+				
+				
 
+		}
+
+	}
+
+	/*
 	void grapple(){
 		
 		shootRay=cam.ViewportPointToRay(new Vector3(0.5f,0.5f,0));
-        shootRay.origin = shootRay.origin + shootRay.direction.normalized;
-		//int layerMask = 6;
+		shootRay.origin = shootRay.origin + shootRay.direction.normalized;
+
 		if (Physics.Raycast (shootRay, out shootHit, hookRange)) {
+			
+
+
             if (shootHit.collider.gameObject.layer== LayerMask.NameToLayer("cylinder"))
             {
                 hookTarget = shootHit.point;
@@ -97,4 +125,26 @@ public class HookShot : MonoBehaviour {
 		hookTravelling = false;
 		
 	}
+*/
+	void grapple(){
+
+
+
+
+
+			
+				hookTarget = blueHit.point;
+				startPosition = transform.position;
+				sound.Play();
+				timer = 0;
+				return;
+			
+
+
+		 
+			
+
+	}
+
+
 }
