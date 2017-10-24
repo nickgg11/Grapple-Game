@@ -16,6 +16,12 @@ public class PlayerHealth : MonoBehaviour {
     bool dead = false;
 	Color imgCol;
     PlayerControl pControl;
+
+	//audio stuff
+	public AudioClip deathAudio;
+	AudioSource audio;
+	//as
+
     // Use this for initialization
     void Start () {
 		imgCol= dmgImage.color;
@@ -52,7 +58,9 @@ public class PlayerHealth : MonoBehaviour {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         DeathMenu.SetActive(true);
-
+		audio=GameObject.Find ("EventManager").GetComponent<AudioSource> ();
+		audio.clip = deathAudio;
+		audio.Play ();
     }
 
     public void reload()
