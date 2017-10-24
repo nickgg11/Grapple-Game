@@ -142,16 +142,15 @@ public class PlayerControl : MonoBehaviour {
 
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
 	{
-		
-		if(other.gameObject.CompareTag("trap")){
+		/*
+		if(other.gameObject.CompareTag("trap")||other.gameObject.CompareTag("lava")){
 			hookScript.hookLanded = false;
 			hookScript.hookTravelling = false;
             print("notmove");
-			rb.velocity /= 2f;
 		}
-
+		*/
 	}
 
 	void updateGravity(bool flag){

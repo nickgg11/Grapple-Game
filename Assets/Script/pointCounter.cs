@@ -9,34 +9,28 @@ public class pointCounter : MonoBehaviour {
     public GameObject player;
     public float[] trapsSpawnPoint=new float[7];
     private float cameraY;
-    public float pointcount;
-	float prevY;
+    public int pointcount;
     // Use this for initialization
     private void Start()
     {
-        pointcount = 0f;
+        pointcount = 0;
         //SetCountText();
-		prevY = player.transform.position.y;
+		 
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-		if(player.transform.position.y>prevY){
-			
-			pointcount += player.transform.position.y-prevY;
-			prevY = player.transform.position.y;
-		}
-        
-        
-        
+        cameraY = player.transform.position.y;
+        if(cameraY>pointcount*3)
+        pointcount += Mathf.RoundToInt(cameraY-pointcount/3);
        
 
         SetCountText();
     }
     void SetCountText()
     {
-		countText.text = "Points: " + Mathf.RoundToInt (pointcount).ToString();
+        countText.text = "Points: " + pointcount.ToString();
         
         if(pointcount >= trapsSpawnPoint[0])
         {

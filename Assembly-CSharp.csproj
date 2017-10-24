@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\models\Lava_Flowing_Shader\Scripts\ScrollingUVs_Layers.cs" />
-     <Compile Include="Assets\Script\bonusPointPickup.cs" />
      <Compile Include="Assets\Script\CameraControl.cs" />
      <Compile Include="Assets\Script\CylinderGenerate.cs" />
      <Compile Include="Assets\Script\CylinderScript.cs" />
@@ -63,11 +62,6 @@
      <Compile Include="Assets\Script\PlayerControl.cs" />
      <Compile Include="Assets\Script\PlayerHealth.cs" />
      <Compile Include="Assets\Script\pointCounter.cs" />
-     <Compile Include="Assets\Script\PU Scripts\Healing.cs" />
-     <Compile Include="Assets\Script\PU Scripts\hookRange.cs" />
-     <Compile Include="Assets\Script\PU Scripts\PointsPUScript.cs" />
-     <Compile Include="Assets\Script\quick scripts\UpdateDeathPoints.cs" />
-     <Compile Include="Assets\Script\RestartScript.cs" />
      <Compile Include="Assets\Script\ThirdPersonCameraControl.cs" />
      <Compile Include="Assets\Script\youllFloatToo.cs" />
      <Compile Include="Assets\scripts for traps\BearTrapScript.cs" />
@@ -76,17 +70,12 @@
      <Compile Include="Assets\scripts for traps\HalfCoverTrapScript.cs" />
      <Compile Include="Assets\scripts for traps\HalfCoverTrapSpawn.cs" />
      <Compile Include="Assets\scripts for traps\TrapSpawnScript.cs" />
-     <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\brick-957827.shader" />
      <None Include="Assets\models\Lava_Flowing_Shader\Shaders\Unlit_Lava_Simple.shader" />
      <None Include="Assets\models\Lava_Flowing_Shader\Shaders\Diffuse_Lava_Distort.shader" />
      <None Include="Assets\models\Lava_Flowing_Shader\Shaders\Unlit_Lava_Distort.shader" />
      <None Include="Assets\models\Lava_Flowing_Shader\Shaders\Unlit_Lava_Distort_Transparent.shader" />
-     <None Include="Assets\imported\HighQualityBricks&amp;Walls\README.txt" />
      <None Include="Assets\models\Lava_Flowing_Shader\ReadMe.txt" />
-     <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\tile-846018.shader" />
-     <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\bricks-868344.shader" />
      <None Include="Assets\imported\trap3\badfluid@gmail.com.txt" />
-     <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\wall-617961.shader" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>C:/Users/Joshua Chung/Documents/GitHub/grapp/Grapple-Game/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
