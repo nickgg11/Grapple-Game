@@ -95,7 +95,9 @@
     <Compile Include="Assets\Script\pointCounter.cs" />
     <Compile Include="Assets\Script\PU Scripts\Healing.cs" />
     <Compile Include="Assets\Script\PU Scripts\hookRange.cs" />
+    <Compile Include="Assets\Script\PU Scripts\MaxHealthPU.cs" />
     <Compile Include="Assets\Script\PU Scripts\PointsPUScript.cs" />
+    <Compile Include="Assets\Script\PU Scripts\SpeedsPU.cs" />
     <Compile Include="Assets\Script\quick scripts\UpdateDeathPoints.cs" />
     <Compile Include="Assets\Script\RestartScript.cs" />
     <Compile Include="Assets\Script\ThirdPersonCameraControl.cs" />

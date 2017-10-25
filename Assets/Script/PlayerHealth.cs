@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour {
     public GameObject DeathMenu;
     public GameObject cursor;
 	public float health=500f;
+    public float maxHealth = 500f;
 	public Image dmgImage;
 	public Text hp;
 	public Slider slide;
@@ -27,12 +28,13 @@ public class PlayerHealth : MonoBehaviour {
 		imgCol= dmgImage.color;
 		slide.maxValue = health;
         pControl = this.gameObject.GetComponent<PlayerControl>();
+        health = maxHealth;
     }
 	
 	// Update is called once per frame
 	void Update () {
 		slide.value = health;
-		hp.text = "HP: " + health.ToString();
+		
         if (health <= 0)
         {
             pControl.disablePlayer();
@@ -43,8 +45,13 @@ public class PlayerHealth : MonoBehaviour {
             }
             dead = true;
         }
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
+        hp.text = "HP: " + health.ToString()+" / "+maxHealth.ToString();
 
-	}
+    }
 
 	public void takeDmg(float dmg){
 		health -= dmg;

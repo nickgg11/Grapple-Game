@@ -23,7 +23,7 @@ public class hookRange : MonoBehaviour {
 		{
 				if (!used){
 		        HookShot Hookshot = GameObject.Find("hookParent").GetComponent<HookShot>();
-		        Hookshot.hookRange +=10;
+		        Hookshot.hookRange +=50f;
 				used = true;
 				Destroy(this.gameObject);
                 }

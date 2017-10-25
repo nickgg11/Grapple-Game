@@ -42,21 +42,23 @@ public class PlayerControl : MonoBehaviour {
 		updateGravity ();
         hookTimer += Time.deltaTime;
 		if ((transform.position - hookScript.hookTarget).magnitude <= 2||hookTimer>5||Input.GetKey ("space")) {
+            hookScript.hookTravelling = false;
 			hookScript.hookLanded = false;
 			updateGravity (true);
-           
+            hookTimer = 0;
         }
 		if (!playerDisabled)
 		{
 			basicMovement();
 		}
+
 		if (!hookScript.hookLanded) {
             if (!velReset)
             {
                 velReset = true;
             }
 			updateGravity (true);
-			hookTimer = 0;
+			
 		} else {
 			if (velReset) {
 				//rb.velocity = Vector3.zero;

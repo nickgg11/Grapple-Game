@@ -10,6 +10,7 @@ public class HookShot : MonoBehaviour {
 	public float hookRange = 100;
 	public Vector3 hookTarget;
     public Slider slide;
+    public float hookSpeeds = 1f;
 	RaycastHit shootHit;
 	RaycastHit blueHit;
 	RaycastHit prevHit;
@@ -28,8 +29,8 @@ public class HookShot : MonoBehaviour {
 	Vector3 startPosition;
 	float timeToReachTarget=2f;
 	AudioSource sound;
-	//
-
+    //
+    Rigidbody rb;
 
 	// Use this for initialization
 	void Start () {
@@ -37,7 +38,8 @@ public class HookShot : MonoBehaviour {
         cam = Camer.GetComponent <Camera>();
 		sound = GetComponent<AudioSource> ();
 		timer = cd;
-	
+        rb = GetComponent<Rigidbody>();
+       
 	}
 	
 	void LateUpdate(){
@@ -45,7 +47,7 @@ public class HookShot : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-
+        print(hookSpeeds);
 
 
         slide.value = cd-timer;
@@ -59,10 +61,13 @@ public class HookShot : MonoBehaviour {
 
 
 		if (hookTravelling) {
-			t += Time.deltaTime / timeToReachTarget;
-			//transform.position = Vector3.Lerp (startPosition,shootHit.point,t);
-			transform.Translate ((blueHit.point - startPosition) * 1f * Time.deltaTime, Space.World);
-			if ((transform.position - blueHit.point).magnitude < 1) {
+
+            //transform.position = Vector3.Lerp (startPosition,shootHit.point,t);
+            Vector3 destination = blueHit.point;
+			transform.Translate ((destination - startPosition) * hookSpeeds * Time.deltaTime, Space.World);
+           // rb.velocity = (destination - startPosition);
+
+            if ((transform.position - destination).magnitude < 1) {
 				hookTravelling = false;
 				hookLanded = true;
 			}
@@ -71,9 +76,11 @@ public class HookShot : MonoBehaviour {
 
 
 		} else if (hookLanded) {
-			
+          //  rb.velocity = Vector3.zero;
 
-		}else{
+
+        }
+        else{
 			blueIndicator ();
 			transform.position = player.transform.position;
 			transform.rotation = Quaternion.LookRotation (cam.ViewportPointToRay(new Vector3(0.5f,0.5f,0)).direction);
