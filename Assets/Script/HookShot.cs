@@ -54,9 +54,14 @@ public class HookShot : MonoBehaviour {
 		timer += Time.deltaTime;
 		if (Input.GetButton ("Fire1")&&timer>cd&&!hookLanded&&!hookShotDisable) {
 			hookTravelling = true;
-			grapple ();
-
-			
+           // if (blueHit.collider.gameObject.layer != LayerMask.NameToLayer("cylinder"))
+         //   {
+         //       timer = 2f;
+          //  }
+          //  else
+          //  {
+                grapple();
+           // } 
 		}
 
 
@@ -68,6 +73,7 @@ public class HookShot : MonoBehaviour {
            // rb.velocity = (destination - startPosition);
 
             if ((transform.position - destination).magnitude < 1) {
+            
 				hookTravelling = false;
 				hookLanded = true;
 			}

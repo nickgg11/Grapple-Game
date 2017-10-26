@@ -28,10 +28,6 @@ public class pointCounter : MonoBehaviour {
 			prevY = player.transform.position.y;
 		}
         
-        
-        
-       
-
         SetCountText();
     }
     void SetCountText()
