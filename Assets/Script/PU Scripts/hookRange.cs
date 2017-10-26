@@ -22,8 +22,9 @@ public class hookRange : MonoBehaviour {
 		if (other.CompareTag("Player"))
 		{
 				if (!used){
-		        HookShot Hookshot = GameObject.Find("hookParent").GetComponent<HookShot>();
-		        Hookshot.hookRange +=50f;
+				PlayerControl pcontrol = GameObject.Find("player").GetComponent<PlayerControl >();
+				pcontrol.pullSpeed +=0.5f;
+				pcontrol.maxPullVel += 10f;
 				used = true;
 				Destroy(this.gameObject);
                 }

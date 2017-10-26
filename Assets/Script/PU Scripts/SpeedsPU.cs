@@ -34,7 +34,7 @@ public class SpeedsPU : MonoBehaviour {
             {
                 print("pu");
                 HookShot pHook = GameObject.Find("hookParent").GetComponent<HookShot>();
-                pHook.hookSpeeds += 0.01f;
+                pHook.hookSpeeds += 0.5f;
                 
                 used = true;
                 Destroy(this.gameObject);

@@ -38,7 +38,7 @@ public class HookShot : MonoBehaviour {
         cam = Camer.GetComponent <Camera>();
 		sound = GetComponent<AudioSource> ();
 		timer = cd;
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
        
 	}
 	
@@ -47,7 +47,7 @@ public class HookShot : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-        print(hookSpeeds);
+        
 
 
         slide.value = cd-timer;

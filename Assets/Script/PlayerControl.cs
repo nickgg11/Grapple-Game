@@ -41,6 +41,7 @@ public class PlayerControl : MonoBehaviour {
 	{
 		updateGravity ();
         hookTimer += Time.deltaTime;
+		
 		if ((transform.position - hookScript.hookTarget).magnitude <= 2||hookTimer>5||Input.GetKey ("space")) {
             hookScript.hookTravelling = false;
 			hookScript.hookLanded = false;
