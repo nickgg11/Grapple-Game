@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class HookShot : MonoBehaviour {
 	public GameObject clonePrefab;
-	public float cd=2f;
+    public GameObject redClone;
+    public float cd=2f;
 	public GameObject player;
 	public GameObject Camer;
 	public float hookRange = 100;
@@ -23,14 +24,15 @@ public class HookShot : MonoBehaviour {
 	Ray blueRay;
 	public bool hookLanded=false;
 	public bool hookTravelling=false;
-
+    bool targetValid = false;
 	//
 	float t=0;
 	Vector3 startPosition;
 	float timeToReachTarget=2f;
 	AudioSource sound;
     //
-    Rigidbody rb;
+ 
+    public float distance;
 
 	// Use this for initialization
 	void Start () {
@@ -38,7 +40,6 @@ public class HookShot : MonoBehaviour {
         cam = Camer.GetComponent <Camera>();
 		sound = GetComponent<AudioSource> ();
 		timer = cd;
-        //rb = GetComponent<Rigidbody>();
        
 	}
 	
@@ -53,14 +54,17 @@ public class HookShot : MonoBehaviour {
         slide.value = cd-timer;
 		timer += Time.deltaTime;
 		if (Input.GetButton ("Fire1")&&timer>cd&&!hookLanded&&!hookShotDisable) {
-			hookTravelling = true;
-           // if (blueHit.collider.gameObject.layer != LayerMask.NameToLayer("cylinder"))
-         //   {
-         //       timer = 2f;
-          //  }
-          //  else
-          //  {
+
+            // if (blueHit.collider.gameObject.layer != LayerMask.NameToLayer("cylinder"))
+            //   {
+            //       timer = 2f;
+            //  }
+            //  else
+            //  {
+            if (targetValid)
+            {
                 grapple();
+            }
            // } 
 		}
 
@@ -70,7 +74,6 @@ public class HookShot : MonoBehaviour {
             //transform.position = Vector3.Lerp (startPosition,shootHit.point,t);
             Vector3 destination = blueHit.point;
 			transform.Translate ((destination - startPosition) * hookSpeeds * Time.deltaTime, Space.World);
-           // rb.velocity = (destination - startPosition);
 
             if ((transform.position - destination).magnitude < 1) {
             
@@ -78,13 +81,7 @@ public class HookShot : MonoBehaviour {
 				hookLanded = true;
 			}
 
-
-
-
 		} else if (hookLanded) {
-          //  rb.velocity = Vector3.zero;
-
-
         }
         else{
 			blueIndicator ();
@@ -94,25 +91,44 @@ public class HookShot : MonoBehaviour {
 	}
 
 	void blueIndicator(){
-		
-		blueRay=cam.ViewportPointToRay(new Vector3(0.5f,0.5f,0));
+        Destroy(clone);
+        blueRay =cam.ViewportPointToRay(new Vector3(0.5f,0.5f,0));
 		blueRay.origin = blueRay.origin + blueRay.direction.normalized;
-		if (Physics.Raycast (blueRay, out blueHit, hookRange)) {
-			Destroy (clone);
-			if(blueHit.collider.gameObject.layer== LayerMask.NameToLayer("cylinder")){
-				Vector3 temppp = blueHit.collider.gameObject.transform.position;
-				clone = Instantiate (clonePrefab, blueHit.collider.gameObject.transform);
-				temppp.y = 0;
-				//clone.transform.Translate (-temppp.normalized * 2f);
-				MeshFilter mesh = clone.GetComponent<MeshFilter> ();
-				mesh = blueHit.collider.gameObject.GetComponent<MeshFilter> ();
-			}
-				
-				
+        if (Physics.Raycast(blueRay, out blueHit, hookRange))
+        {
+            targetValid = true;
+            //Destroy(clone);
+            if (blueHit.collider.gameObject.layer == LayerMask.NameToLayer("cylinder"))
+            {
+                Vector3 temppp = blueHit.collider.gameObject.transform.position;
+                clone = Instantiate(clonePrefab, blueHit.collider.gameObject.transform);
+                temppp.y = 0;
+                //clone.transform.Translate (-temppp.normalized * 2f);
+                MeshFilter mesh = clone.GetComponent<MeshFilter>();
+                mesh = blueHit.collider.gameObject.GetComponent<MeshFilter>();
+                return;
+            }
 
-		}
 
-	}
+
+        }
+        else
+        {
+            targetValid = false;
+        }
+
+        //red indicator
+        if (Physics.Raycast(blueRay, out blueHit, 1000f))
+        {
+            Vector3 temppp = blueHit.collider.gameObject.transform.position;
+            clone = Instantiate(redClone, blueHit.collider.gameObject.transform);
+            MeshFilter mesh = clone.GetComponent<MeshFilter>();
+            mesh = blueHit.collider.gameObject.GetComponent<MeshFilter>();
+            
+
+        }
+
+    }
 
 	/*
 	void grapple(){
@@ -139,24 +155,15 @@ public class HookShot : MonoBehaviour {
 		
 	}
 */
-	void grapple(){
-
-
-
-
-
-			
-				hookTarget = blueHit.point;
-				startPosition = transform.position;
-				sound.Play();
-				timer = 0;
-				return;
-			
-
-
-		 
-			
-
+	void grapple(){ 
+       
+        hookTarget = blueHit.point;
+        startPosition = transform.position;
+        distance = (hookTarget - startPosition).magnitude;
+        hookTravelling = true;
+        sound.Play();
+        timer = 0;
+        return;
 	}
 
 

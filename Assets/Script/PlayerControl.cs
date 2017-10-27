@@ -40,9 +40,9 @@ public class PlayerControl : MonoBehaviour {
 	void FixedUpdate()
 	{
 		updateGravity ();
-        hookTimer += Time.deltaTime;
+        //hookTimer += Time.deltaTime;
 		
-		if ((transform.position - hookScript.hookTarget).magnitude <= 2||hookTimer>5||Input.GetKey ("space")) {
+		if ((transform.position - hookScript.hookTarget).magnitude <= hookScript.distance/10f||hookTimer>5||Input.GetKey ("space")) {
             hookScript.hookTravelling = false;
 			hookScript.hookLanded = false;
 			updateGravity (true);
@@ -69,7 +69,7 @@ public class PlayerControl : MonoBehaviour {
 				velReset = false;
 				updateGravity (false);
 			}
-			hookTimer += Time.deltaTime;
+		
 			if (rb.velocity.magnitude <= maxPullVel) {
 				rb.AddForce ((hookScript.hookTarget-transform.position)*pullSpeed);
 			}
