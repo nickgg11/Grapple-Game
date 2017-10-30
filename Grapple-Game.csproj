@@ -97,18 +97,19 @@
     <Compile Include="Assets\Script\PU Scripts\hookRange.cs" />
     <Compile Include="Assets\Script\PU Scripts\MaxHealthPU.cs" />
     <Compile Include="Assets\Script\PU Scripts\PointsPUScript.cs" />
+    <Compile Include="Assets\Script\PU Scripts\SpawnPUScript.cs" />
     <Compile Include="Assets\Script\PU Scripts\SpeedsPU.cs" />
     <Compile Include="Assets\Script\quick scripts\nickGScript.cs" />
     <Compile Include="Assets\Script\quick scripts\UpdateDeathPoints.cs" />
     <Compile Include="Assets\Script\RestartScript.cs" />
+    <Compile Include="Assets\Script\scripts for traps\BearTrapScript.cs" />
+    <Compile Include="Assets\Script\scripts for traps\BearTrapSpawn.cs" />
+    <Compile Include="Assets\Script\scripts for traps\FlyInBlock.cs" />
+    <Compile Include="Assets\Script\scripts for traps\HalfCoverTrapScript.cs" />
+    <Compile Include="Assets\Script\scripts for traps\HalfCoverTrapSpawn.cs" />
+    <Compile Include="Assets\Script\scripts for traps\TrapSpawnScript.cs" />
     <Compile Include="Assets\Script\ThirdPersonCameraControl.cs" />
     <Compile Include="Assets\Script\youllFloatToo.cs" />
-    <Compile Include="Assets\scripts for traps\BearTrapScript.cs" />
-    <Compile Include="Assets\scripts for traps\BearTrapSpawn.cs" />
-    <Compile Include="Assets\scripts for traps\FlyInBlock.cs" />
-    <Compile Include="Assets\scripts for traps\HalfCoverTrapScript.cs" />
-    <Compile Include="Assets\scripts for traps\HalfCoverTrapSpawn.cs" />
-    <Compile Include="Assets\scripts for traps\TrapSpawnScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\imported\HighQualityBricks&amp;Walls\README.txt" />

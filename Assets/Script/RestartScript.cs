@@ -6,7 +6,6 @@ public class RestartScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Invoke("reload", 0.5f);
     }
 	
 	// Update is called once per frame
@@ -16,5 +15,11 @@ public class RestartScript : MonoBehaviour {
     public void reload()
     {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void backToMenu()
+    {
+        SceneManager.LoadScene("scene2", LoadSceneMode.Single);
+
     }
 }
