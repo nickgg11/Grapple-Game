@@ -21,7 +21,7 @@ public class Healing : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
-        transform.Rotate(new Vector3(15, 30, 45) * Time.deltaTime);
+       
         if ((transform.position - player.transform.position).magnitude < 25f)
         {
             chaseOrNo = true;

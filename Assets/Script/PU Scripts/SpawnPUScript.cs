@@ -31,7 +31,7 @@ public class SpawnPUScript : MonoBehaviour {
 
                 pos.y = player.transform.position.y + 500f;
                 Quaternion rotation = new Quaternion(45, 45, 45, 1);
-                Instantiate(PU[Random.Range(0,4)], pos, rotation);
+                Instantiate(PU[Random.Range(0,5)], pos, rotation);
             }
            
         }

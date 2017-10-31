@@ -82,6 +82,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\models\Lava_Flowing_Shader\Scripts\ScrollingUVs_Layers.cs" />
+    <Compile Include="Assets\PowerUp\Scripts\CustomizablePowerUp.cs" />
+    <Compile Include="Assets\PowerUp\Scripts\PowerUpManager.cs" />
+    <Compile Include="Assets\PowerUp\Scripts\PowerUpRotation.cs" />
+    <Compile Include="Assets\PowerUp\Scripts\ScaleParticles.cs" />
+    <Compile Include="Assets\PowerUp\Scripts\TakeablePowerUp.cs" />
+    <Compile Include="Assets\PowerUp\Scripts\Utility\Singleton.cs" />
     <Compile Include="Assets\Script\bonusPointPickup.cs" />
     <Compile Include="Assets\Script\CameraControl.cs" />
     <Compile Include="Assets\Script\CylinderGenerate.cs" />
@@ -102,6 +108,7 @@
     <Compile Include="Assets\Script\quick scripts\nickGScript.cs" />
     <Compile Include="Assets\Script\quick scripts\UpdateDeathPoints.cs" />
     <Compile Include="Assets\Script\RestartScript.cs" />
+    <Compile Include="Assets\Script\sceneLoader.cs" />
     <Compile Include="Assets\Script\scripts for traps\BearTrapScript.cs" />
     <Compile Include="Assets\Script\scripts for traps\BearTrapSpawn.cs" />
     <Compile Include="Assets\Script\scripts for traps\FlyInBlock.cs" />

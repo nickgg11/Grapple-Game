@@ -98,7 +98,8 @@ public class HookShot : MonoBehaviour {
         {
             targetValid = true;
             //Destroy(clone);
-            if (blueHit.collider.gameObject.layer == LayerMask.NameToLayer("cylinder"))
+            //if (blueHit.collider.gameObject.layer == LayerMask.NameToLayer("cylinder"))
+            if (blueHit.collider.gameObject.tag.Contains("Wall"))
             {
                 Vector3 temppp = blueHit.collider.gameObject.transform.position;
                 clone = Instantiate(clonePrefab, blueHit.collider.gameObject.transform);
@@ -109,7 +110,7 @@ public class HookShot : MonoBehaviour {
                 return;
             }
 
-
+            targetValid = false;
 
         }
         else
