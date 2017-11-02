@@ -37,14 +37,21 @@ public class hookRange : MonoBehaviour {
     // Update is called once per frame
     void OnTriggerEnter (Collider other) {
 		if (other.CompareTag("Player"))
-		{
-				if (!used){
+		{	
+			playSound ();
+			if (!used){
 				PlayerControl pcontrol = GameObject.Find("player").GetComponent<PlayerControl >();
 				pcontrol.pullSpeed +=0.5f;
 				pcontrol.maxPullVel += 10f;
 				used = true;
 				Destroy(this.gameObject);
-                }
+            }
         }
     }
+
+	void playSound(){
+
+		AudioSource AS=GameObject.Find("player").GetComponentInChildren<AudioSource>();
+		AS.Play ();
+	}
 }

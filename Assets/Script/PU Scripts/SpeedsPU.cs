@@ -49,6 +49,7 @@ public class SpeedsPU : MonoBehaviour {
 
             if (!used)
             {
+				playSound ();
                 print("pu");
                 HookShot pHook = GameObject.Find("hookParent").GetComponent<HookShot>();
                 pHook.hookSpeeds += 0.5f;
@@ -60,6 +61,11 @@ public class SpeedsPU : MonoBehaviour {
         }
 
     }
+	void playSound(){
+
+		AudioSource AS=GameObject.Find("player").GetComponentInChildren<AudioSource>();
+		AS.Play ();
+	}
 }
 
 

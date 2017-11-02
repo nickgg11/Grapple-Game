@@ -884,10 +884,10 @@ MonoBehaviour:
   materials:
   - {fileID: 2100000, guid: 27348c2da388ee24aadf8472f82ad963, type: 2}
   - {fileID: 2100000, guid: 171d305832c1ff8439b29868a108e89f, type: 2}
-  - {fileID: 2100000, guid: 5065d045e98ce4847ad24744bc5a5ccb, type: 2}
   - {fileID: 2100000, guid: 6eefc055ee419ea49af280cd42314208, type: 2}
+  - {fileID: 2100000, guid: 5065d045e98ce4847ad24744bc5a5ccb, type: 2}
   tagName:
   - rottenWall
   - slipperyWall
-  - Untagged
   - woodWall
+  - Untagged

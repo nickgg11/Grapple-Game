@@ -17,7 +17,7 @@ public class BearTrapScript : MonoBehaviour {
 		anime = GetComponentInChildren<Animation> ();
 		lavaFloor = GameObject.Find ("Lava_distort");
         playControl = GameObject.Find("player").GetComponent<PlayerControl>();
-		anime ["Up Down"].speed = 1f;
+		anime ["Up Down"].speed = 1.5f;
 		activate = true;
 		stabSound = GetComponent<AudioSource> ();
     }
@@ -30,7 +30,7 @@ public class BearTrapScript : MonoBehaviour {
         if (triggered)
         {
             timer += Time.deltaTime;
-			if (timer >= 3f||!anime.isPlaying)
+			if (timer >= 2f||!anime.isPlaying)
             {
                 triggered = false;
                 timer = 0;

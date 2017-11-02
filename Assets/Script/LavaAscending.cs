@@ -12,7 +12,7 @@ public class LavaAscending : MonoBehaviour {
 	public float dmgTick=3f;
     pointCounter pc;
 	Rigidbody rb;
-	float timer=0;
+	float timer=3;
 	bool playerIn=false;
     PlayerHealth playerHealth;
 	// Use this for initialization
@@ -43,13 +43,14 @@ public class LavaAscending : MonoBehaviour {
             {
                 ascendSpeed = speedChange;
             }
+
             if (playerIn)
             {
                 timer += Time.deltaTime;
                 if (timer >= dmgTick)
                 {
                     dmgPlayer();
-                    timer = 0f;
+                   
                 }
 
             }
@@ -69,6 +70,7 @@ public class LavaAscending : MonoBehaviour {
 	private void OnCollisionEnter(Collision other){
 		print("hitting");
 		if(other.gameObject.CompareTag("Player")){
+			playerIn = true;
 			dmgPlayer ();
 		
 		}
@@ -91,8 +93,11 @@ public class LavaAscending : MonoBehaviour {
 
 
 	void dmgPlayer(){
+		AudioSource AS = GameObject.Find ("burn sound").GetComponent<AudioSource> ();
+		AS.Play ();
 		PlayerHealth playHealth=player.GetComponent<PlayerHealth>();
 		playHealth.takeDmg(100f);
+		timer = 0f;
 	}
 
 }

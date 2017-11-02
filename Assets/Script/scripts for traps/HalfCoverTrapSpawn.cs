@@ -28,7 +28,7 @@ public class HalfCoverTrapSpawn : MonoBehaviour {
             {
                 timer = 0;
                 Vector3 temp = new Vector3(Random.Range(-75, 75), 0, Random.Range(-75, 75)).normalized;
-                Vector3 pos = temp * Random.Range(20, 55);
+                Vector3 pos = temp * Random.Range(20, 45);
                 pos.y += player.transform.position.y + 1000f;
                 lastY = pos.y;
                 Quaternion quat = Quaternion.LookRotation(temp, Vector3.up);

@@ -42,6 +42,7 @@ public class Healing : MonoBehaviour {
         {
             if (!used)
             {
+				playSound ();
                 PlayerHealth Playerhealth = GameObject.Find("player").GetComponent<PlayerHealth>();
                 Playerhealth.health += 100;
                 used = true;
@@ -50,6 +51,11 @@ public class Healing : MonoBehaviour {
             
         }
 		
+	}
+	void playSound(){
+
+		AudioSource AS=GameObject.Find("player").GetComponentInChildren<AudioSource>();
+		AS.Play ();
 	}
 
 }

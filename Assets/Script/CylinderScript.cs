@@ -10,10 +10,12 @@ public class CylinderScript : MonoBehaviour {
     Renderer[] rend;
 	GameObject lavaFloor;
 	GameObject[] Children=new GameObject[10];
-
+	int mat=3;
     // Use this for initialization
     void Start () {
-		
+		if (transform.position.y > 2000) {
+			mat = 4;
+		}
 		BearTrapSpawn bearTrapSpawnScript = GameObject.Find("EventManager").GetComponent<BearTrapSpawn> ();
 		lavaFloor = GameObject.Find ("Lava_distort");
         
@@ -24,7 +26,7 @@ public class CylinderScript : MonoBehaviour {
         for (int i=0;i< rend.Length;i++)
          {
             Children[i]=(rend[i].gameObject);
-            int temp = Random.Range(0, materials.Length);
+            int temp = Random.Range(0, mat);
             rend[i].material = materials[temp];
             Children[i].tag = tagName[temp];
          }

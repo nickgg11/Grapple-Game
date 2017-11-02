@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MaxHealthPU : MonoBehaviour {
 	bool used;
+	public float healAmount=100;
 	GameObject lavaFloor;
     GameObject player;
     bool chaseOrNo = false;
@@ -43,14 +44,20 @@ public class MaxHealthPU : MonoBehaviour {
 		{
 			if (!used)
 			{
+				playSound ();
 				PlayerHealth Playerhealth = GameObject.Find("player").GetComponent<PlayerHealth>();
-				Playerhealth.maxHealth += 50f;
-                Playerhealth.health += 50f;
+				Playerhealth.maxHealth += healAmount;
+				Playerhealth.health += healAmount;
                 used = true;
 				Destroy(this.gameObject);
 			}
 
 		}
 
+	}
+	void playSound(){
+
+		AudioSource AS=GameObject.Find("player").GetComponentInChildren<AudioSource>();
+		AS.Play ();
 	}
 }

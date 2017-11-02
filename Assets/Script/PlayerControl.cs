@@ -68,7 +68,7 @@ public class PlayerControl : MonoBehaviour {
 				}
 				velReset = false;
 				updateGravity (false);
-                rb.AddForce((hookScript.hookTarget - transform.position) * pullSpeed*3);
+				rb.AddForce((hookScript.hookTarget - transform.position) * pullSpeed*3/rb.mass);
             }
 		
 			if (rb.velocity.magnitude <= maxPullVel) {

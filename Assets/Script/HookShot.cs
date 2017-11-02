@@ -70,20 +70,26 @@ public class HookShot : MonoBehaviour {
 
 
 		if (hookTravelling) {
-
-            //transform.position = Vector3.Lerp (startPosition,shootHit.point,t);
-            Vector3 destination = blueHit.point;
-			transform.Translate ((destination - startPosition) * hookSpeeds * Time.deltaTime, Space.World);
-
-            if ((transform.position - destination).magnitude < 1) {
+			Vector3 destination = blueHit.point;
+			t += Time.deltaTime / 1 * hookSpeeds;
+			transform.position = Vector3.Lerp (startPosition,destination,t);
             
+			//transform.Translate ((destination - startPosition) * hookSpeeds * Time.deltaTime, Space.World);
+			if (t >= 1) {
+				t = 0;
 				hookTravelling = false;
 				hookLanded = true;
 			}
+           /* if ((transform.position - destination).magnitude < 1) {
+				hookTravelling = false;
+				hookLanded = true;
+			}*/
 
 		} else if (hookLanded) {
+			t = 0;
         }
         else{
+			t = 0;
 			blueIndicator ();
 			transform.position = player.transform.position;
 			transform.rotation = Quaternion.LookRotation (cam.ViewportPointToRay(new Vector3(0.5f,0.5f,0)).direction);

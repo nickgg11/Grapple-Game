@@ -23,15 +23,22 @@ public class SpawnPUScript : MonoBehaviour {
             timer = 0;
             if (Random.Range(0, 100) < spawnFrequency)
             {
-                pos.z = Random.Range(-30, 30);
+                //pos.z = Random.Range(-30, 30);
                
                 pos.x = Random.Range(-30, 30);
-                
-               
+				pos.z = Mathf.Sqrt(900 - pos.x * pos.x);
+				if(Random.Range(0,100)>50){
+					pos.z *= -1;
+				}
 
                 pos.y = player.transform.position.y + 500f;
                 Quaternion rotation = new Quaternion(45, 45, 45, 1);
-                Instantiate(PU[Random.Range(0,5)], pos, rotation);
+				if(Random.Range(0,100)>=65){
+					Instantiate(PU[4], pos, rotation);
+				}else{
+					Instantiate(PU[Random.Range(1,5)], pos, rotation);
+				}
+                
             }
            
         }

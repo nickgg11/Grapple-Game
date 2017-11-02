@@ -48,6 +48,7 @@ public class PointsPUScript : MonoBehaviour
 
             if (!used)
             {
+				playSound ();
 					print("pu");
                 pointCounter Playerpoints = GameObject.Find("Points").GetComponent<pointCounter>();
                 Playerpoints.pointcount += 300;
@@ -58,5 +59,10 @@ public class PointsPUScript : MonoBehaviour
         }
 
     }
+	void playSound(){
+		
+		AudioSource AS=GameObject.Find("player").GetComponentInChildren<AudioSource>();
+		AS.Play ();
+	}
 }
 
