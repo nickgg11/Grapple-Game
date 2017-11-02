@@ -81,6 +81,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Game Jam Template\Scripts\DontDestroy.cs" />
+    <Compile Include="Assets\Game Jam Template\Scripts\EventSystemChecker.cs" />
+    <Compile Include="Assets\Game Jam Template\Scripts\Pause.cs" />
+    <Compile Include="Assets\Game Jam Template\Scripts\PlayMusic.cs" />
+    <Compile Include="Assets\Game Jam Template\Scripts\QuitApplication.cs" />
+    <Compile Include="Assets\Game Jam Template\Scripts\SetAudioLevels.cs" />
+    <Compile Include="Assets\Game Jam Template\Scripts\ShowPanels.cs" />
+    <Compile Include="Assets\Game Jam Template\Scripts\StartOptions.cs" />
     <Compile Include="Assets\models\Lava_Flowing_Shader\Scripts\ScrollingUVs_Layers.cs" />
     <Compile Include="Assets\PowerUp\Scripts\CustomizablePowerUp.cs" />
     <Compile Include="Assets\PowerUp\Scripts\PowerUpManager.cs" />
@@ -96,6 +104,7 @@
     <Compile Include="Assets\Script\HookShot.cs" />
     <Compile Include="Assets\Script\HookTravel.cs" />
     <Compile Include="Assets\Script\LavaAscending.cs" />
+    <Compile Include="Assets\Script\PassBetweenScenes.cs" />
     <Compile Include="Assets\Script\PlayerControl.cs" />
     <Compile Include="Assets\Script\PlayerHealth.cs" />
     <Compile Include="Assets\Script\pointCounter.cs" />
@@ -119,6 +128,8 @@
     <Compile Include="Assets\Script\youllFloatToo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Game Jam Template\Fonts\OpenSans\License!.txt" />
+    <None Include="Assets\Game Jam Template\GameJamTemplateReadMe.txt" />
     <None Include="Assets\imported\HighQualityBricks&amp;Walls\README.txt" />
     <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\brick-957827.shader" />
     <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\bricks-868344.shader" />

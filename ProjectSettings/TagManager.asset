@@ -12,6 +12,8 @@ TagManager:
   - slipperyWall
   - woodWall
   - rottenWall
+  - Health
+  - enderWall
   layers:
   - Default
   - TransparentFX

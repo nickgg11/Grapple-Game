@@ -25,6 +25,7 @@ public class HookShot : MonoBehaviour {
 	public bool hookLanded=false;
 	public bool hookTravelling=false;
     bool targetValid = false;
+    public bool teleport = false;
 	//
 	float t=0;
 	Vector3 startPosition;
@@ -86,6 +87,7 @@ public class HookShot : MonoBehaviour {
 			}*/
 
 		} else if (hookLanded) {
+            
 			t = 0;
         }
         else{
@@ -107,6 +109,14 @@ public class HookShot : MonoBehaviour {
             //if (blueHit.collider.gameObject.layer == LayerMask.NameToLayer("cylinder"))
             if (blueHit.collider.gameObject.tag.Contains("Wall"))
             {
+                if (blueHit.collider.gameObject.CompareTag("enderWall"))
+                {
+                    teleport = true;
+                }
+                else
+                {
+                    teleport = false;
+                }
                 Vector3 temppp = blueHit.collider.gameObject.transform.position;
                 clone = Instantiate(clonePrefab, blueHit.collider.gameObject.transform);
                 temppp.y = 0;
@@ -137,31 +147,7 @@ public class HookShot : MonoBehaviour {
 
     }
 
-	/*
-	void grapple(){
-		
-		shootRay=cam.ViewportPointToRay(new Vector3(0.5f,0.5f,0));
-		shootRay.origin = shootRay.origin + shootRay.direction.normalized;
 
-		if (Physics.Raycast (shootRay, out shootHit, hookRange)) {
-			
-
-
-            if (shootHit.collider.gameObject.layer== LayerMask.NameToLayer("cylinder"))
-            {
-                hookTarget = shootHit.point;
-                startPosition = transform.position;
-                sound.Play();
-                timer = 0;
-                return;
-            }
-            
-			
-		} 
-		hookTravelling = false;
-		
-	}
-*/
 	void grapple(){ 
        
         hookTarget = blueHit.point;

@@ -27,9 +27,13 @@ public class CylinderScript : MonoBehaviour {
          {
             Children[i]=(rend[i].gameObject);
             int temp = Random.Range(0, mat);
+            if (Random.Range(0, 1000) > 990)
+            {
+                temp = 4;
+            }
             rend[i].material = materials[temp];
             Children[i].tag = tagName[temp];
-         }
+        }
 
         //spawn bear trap
 		for (int i=0;i< Children.Length;i++)
@@ -51,8 +55,5 @@ public class CylinderScript : MonoBehaviour {
 		if (transform.position.y < lavaFloor.transform.position.y - 10f) {
 			Destroy(this.gameObject);
 		}
-
-        
-
 	}
 }

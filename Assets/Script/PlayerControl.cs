@@ -70,6 +70,14 @@ public class PlayerControl : MonoBehaviour {
 				updateGravity (false);
 				rb.AddForce((hookScript.hookTarget - transform.position) * pullSpeed*3/rb.mass);
             }
+
+
+            if (hookScript.teleport)
+            {
+                hookScript.teleport = false;
+                transform.position = hookScript.hookTarget;
+                hookScript.hookLanded = false;
+            }
 		
 			if (rb.velocity.magnitude <= maxPullVel) {
 				rb.AddForce ((hookScript.hookTarget-transform.position)*pullSpeed);
