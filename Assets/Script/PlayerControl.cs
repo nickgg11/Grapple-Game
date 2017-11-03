@@ -74,9 +74,11 @@ public class PlayerControl : MonoBehaviour {
 
             if (hookScript.teleport)
             {
+				GameObject.Find ("teleport audio").GetComponent<AudioSource> ().Play ();
                 hookScript.teleport = false;
                 transform.position = hookScript.hookTarget;
                 hookScript.hookLanded = false;
+
             }
 		
 			if (rb.velocity.magnitude <= maxPullVel) {

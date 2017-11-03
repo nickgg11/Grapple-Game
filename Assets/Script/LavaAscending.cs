@@ -6,7 +6,6 @@ public class LavaAscending : MonoBehaviour {
 	public float ascendSpeed=10f;
 	public float countDown = 3f;
     public GameObject player;
-    public bool enable = true;
     float speedChange = 10f;
     public GameObject points;
 	public float dmgTick=3f;

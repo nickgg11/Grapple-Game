@@ -27,7 +27,7 @@ public class CylinderScript : MonoBehaviour {
          {
             Children[i]=(rend[i].gameObject);
             int temp = Random.Range(0, mat);
-            if (Random.Range(0, 1000) > 990)
+            if (Random.Range(0, 1000) > 995)
             {
                 temp = 4;
             }
