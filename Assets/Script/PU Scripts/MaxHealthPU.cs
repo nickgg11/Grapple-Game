@@ -49,7 +49,8 @@ public class MaxHealthPU : MonoBehaviour {
 				Playerhealth.maxHealth += healAmount;
 				Playerhealth.health += healAmount;
                 used = true;
-				Destroy(this.gameObject);
+                GameObject.Find("feedDisplay").GetComponent<feedDisplayScript>().display("Max health increased by "+healAmount);
+                Destroy(this.gameObject);
 			}
 
 		}

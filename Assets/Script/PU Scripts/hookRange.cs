@@ -44,7 +44,8 @@ public class hookRange : MonoBehaviour {
 				pcontrol.pullSpeed +=0.5f;
 				pcontrol.maxPullVel += 10f;
 				used = true;
-				Destroy(this.gameObject);
+                GameObject.Find("feedDisplay").GetComponent<feedDisplayScript>().display("Grapple pull speed upgraded");
+                Destroy(this.gameObject);
             }
         }
     }

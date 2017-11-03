@@ -53,7 +53,7 @@ public class SpeedsPU : MonoBehaviour {
                 print("pu");
                 HookShot pHook = GameObject.Find("hookParent").GetComponent<HookShot>();
                 pHook.hookSpeeds += 0.5f;
-                
+                GameObject.Find("feedDisplay").GetComponent<feedDisplayScript>().display("Hook eject speed upgraded");
                 used = true;
                 Destroy(this.gameObject);
             }

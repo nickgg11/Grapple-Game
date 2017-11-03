@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour {
 
@@ -14,7 +15,8 @@ public class PlayerControl : MonoBehaviour {
 	public float pullSpeed=2f;
 	public float maxPullVel=40f;
     public bool holdSpace=true;
-
+    public Image teleportFlash;
+    Color imgCol;
     bool playerDisabled = false;
 	private bool gravityStatus = true;
 	HookShot hookScript;
@@ -28,7 +30,7 @@ public class PlayerControl : MonoBehaviour {
 	void Start()
 	{
 		speed = Initialspeed;
-
+        imgCol = teleportFlash.color;
 
 		rb = GetComponent<Rigidbody>();
 		count = 0;
@@ -74,10 +76,14 @@ public class PlayerControl : MonoBehaviour {
 
             if (hookScript.teleport)
             {
-				GameObject.Find ("teleport audio").GetComponent<AudioSource> ().Play ();
+                teleportFlash.enabled = true;
+                GameObject.Find ("teleport audio").GetComponent<AudioSource> ().Play ();
                 hookScript.teleport = false;
                 transform.position = hookScript.hookTarget;
                 hookScript.hookLanded = false;
+                print("tp enabled");
+               
+                StartCoroutine("flash");
 
             }
 		
@@ -91,7 +97,27 @@ public class PlayerControl : MonoBehaviour {
 
 
 	}
-	bool anyInput(){
+    
+    float start = 0f;
+    float end = 1f;
+    IEnumerator flash()
+    {
+        print("gmg");
+        for (float i = 0f; i <= 1f; i += Time.deltaTime * 1 / 0.5f)
+        {
+            imgCol.a = Mathf.Lerp(end, start, i);
+            teleportFlash.color = imgCol;
+
+            yield return null;
+            imgCol.a = start;
+            teleportFlash.color = imgCol;
+
+        }
+
+    }
+
+
+    bool anyInput(){
 		if (Input.GetAxis ("Horizontal") != 0f || Input.GetAxis ("Vertical") != -0f || Input.GetKey ("space"))
 			return true;
 

@@ -46,6 +46,8 @@ public class Healing : MonoBehaviour {
                 PlayerHealth Playerhealth = GameObject.Find("player").GetComponent<PlayerHealth>();
                 Playerhealth.health += 100;
                 used = true;
+                GameObject.Find("feedDisplay").GetComponent<feedDisplayScript>().display("+100 Hp");
+                
                 Destroy(this.gameObject);
             }
             

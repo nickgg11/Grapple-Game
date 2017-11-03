@@ -53,6 +53,7 @@ public class PointsPUScript : MonoBehaviour
                 pointCounter Playerpoints = GameObject.Find("Points").GetComponent<pointCounter>();
                 Playerpoints.pointcount += 300;
                 used = true;
+                GameObject.Find("feedDisplay").GetComponent<feedDisplayScript>().display("+300 points");
                 Destroy(this.gameObject);
             }
 
