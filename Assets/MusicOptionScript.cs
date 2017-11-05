@@ -4,10 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class MusicOptionScript : MonoBehaviour {
-	AudioListener AL ;
+	
 	// Use this for initialization
 	void Start () {
-		AL = GameObject.Find ("Main Camera1").GetComponent<AudioListener> ();
 	}
 	
 	// Update is called once per frame
@@ -17,7 +16,12 @@ public class MusicOptionScript : MonoBehaviour {
 
 	public void musicOnorOff(){
 		print ("sound chagned");
-		AL.enabled = this.gameObject.GetComponent<Toggle>().isOn;
+		if (this.gameObject.GetComponent<Toggle> ().isOn) {
+			AudioListener.volume = 1.0f;
+		} else {
+			AudioListener.volume = 0;
+		}
+
 	}
 	
 }

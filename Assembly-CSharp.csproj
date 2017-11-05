@@ -52,14 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CloseMenu.cs" />
-     <Compile Include="Assets\Game Jam Template\Scripts\DontDestroy.cs" />
-     <Compile Include="Assets\Game Jam Template\Scripts\EventSystemChecker.cs" />
-     <Compile Include="Assets\Game Jam Template\Scripts\Pause.cs" />
-     <Compile Include="Assets\Game Jam Template\Scripts\PlayMusic.cs" />
-     <Compile Include="Assets\Game Jam Template\Scripts\QuitApplication.cs" />
-     <Compile Include="Assets\Game Jam Template\Scripts\SetAudioLevels.cs" />
-     <Compile Include="Assets\Game Jam Template\Scripts\ShowPanels.cs" />
-     <Compile Include="Assets\Game Jam Template\Scripts\StartOptions.cs" />
+     <Compile Include="Assets\feedDisplayScript.cs" />
      <Compile Include="Assets\models\Lava_Flowing_Shader\Scripts\ScrollingUVs_Layers.cs" />
      <Compile Include="Assets\MusicOptionScript.cs" />
      <Compile Include="Assets\PowerUp\Scripts\CustomizablePowerUp.cs" />
@@ -104,13 +97,11 @@
      <None Include="Assets\models\Lava_Flowing_Shader\Shaders\Unlit_Lava_Distort.shader" />
      <None Include="Assets\models\Lava_Flowing_Shader\Shaders\Unlit_Lava_Distort_Transparent.shader" />
      <None Include="Assets\imported\HighQualityBricks&amp;Walls\README.txt" />
-     <None Include="Assets\Game Jam Template\Fonts\OpenSans\License!.txt" />
      <None Include="Assets\models\Lava_Flowing_Shader\ReadMe.txt" />
      <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\tile-846018.shader" />
      <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\bricks-868344.shader" />
      <None Include="Assets\imported\trap3\badfluid@gmail.com.txt" />
      <None Include="Assets\imported\HighQualityBricks&amp;Walls\Shaders\wall-617961.shader" />
-     <None Include="Assets\Game Jam Template\GameJamTemplateReadMe.txt" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>C:/Users/Joshua Chung/Documents/GitHub/grapp/Grapple-Game/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
