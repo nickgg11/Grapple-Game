@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43667546, g: 0.48427135, b: 0.5645225, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667555, g: 0.48427188, b: 0.56452423, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -275,7 +275,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 900, y: 500}
+  m_SizeDelta: {x: 900, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &221923442
 MonoBehaviour:
@@ -311,12 +311,15 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "The objective of this game is to get as high as possible toward the top
     of the tower\nwithout dying. Beware, the lava below you will be continuously chasing
-    you.\n\n\nUse Mouse to aim, left click to grapple.\n\nPress space to detach the
+    you.\n\n\nUse Mouse to aim, left click to grapple.\n\nPress SPACE to detach the
     hook whenever you want,\nbut if you don't detach, the hook may pull you back.\n\nYou
     can use W A S D for some amount of control in air\n\n\n\nThere are spikes trap
-    on the wall, getting too close \nthe trap will impale you and root you in place.\n\n\n\nThere
-    will be collectables on your way, get close to them to collect.\n\nYou can press
-    the \"esc\" key to open the menu in game for some settings"
+    on the wall, getting too close \nthe trap will impale you and root you in place.\n\nThere
+    are different types of walls, if aimed and highlighted blue, it is hook-able (such
+    as the purple walls that you are able to teleport to);\nIf red, it is not hook-able
+    (such as the cracked walls)\n\nThere will be collectables on your way, get close
+    to them to collect.\n\nYou can press the \"esc\" key to open the menu in game
+    for some settings"
 --- !u!222 &221923443
 CanvasRenderer:
   m_ObjectHideFlags: 0

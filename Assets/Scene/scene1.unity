@@ -168,6 +168,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: fc6d3291b635a634ba29896bcbaa659f, type: 2}
   - {fileID: 2100000, guid: 6fd1fc9e351f8a04b938fd11f43a04e8, type: 2}
   tagName: []
+  telespawn: 998
 --- !u!1 &48868092
 GameObject:
   m_ObjectHideFlags: 0
@@ -1789,6 +1790,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: fc6d3291b635a634ba29896bcbaa659f, type: 2}
   - {fileID: 2100000, guid: 6fd1fc9e351f8a04b938fd11f43a04e8, type: 2}
   tagName: []
+  telespawn: 998
 --- !u!1 &415954097
 GameObject:
   m_ObjectHideFlags: 0
@@ -3282,6 +3284,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: fc6d3291b635a634ba29896bcbaa659f, type: 2}
   - {fileID: 2100000, guid: 6fd1fc9e351f8a04b938fd11f43a04e8, type: 2}
   tagName: []
+  telespawn: 998
 --- !u!1 &794322657
 GameObject:
   m_ObjectHideFlags: 0
@@ -3341,6 +3344,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: fc6d3291b635a634ba29896bcbaa659f, type: 2}
   - {fileID: 2100000, guid: 6fd1fc9e351f8a04b938fd11f43a04e8, type: 2}
   tagName: []
+  telespawn: 998
 --- !u!1 &800438531
 GameObject:
   m_ObjectHideFlags: 0
@@ -6542,8 +6546,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeathMenu: {fileID: 241598650}
   cursor: {fileID: 1307106092}
-  health: 500
-  maxHealth: 500
+  health: 1000
+  maxHealth: 1000
   dmgImage: {fileID: 1232547460}
   hp: {fileID: 1924295886}
   slide: {fileID: 1815844528}
@@ -7209,6 +7213,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: fc6d3291b635a634ba29896bcbaa659f, type: 2}
   - {fileID: 2100000, guid: 6fd1fc9e351f8a04b938fd11f43a04e8, type: 2}
   tagName: []
+  telespawn: 998
 --- !u!4 &1530092585
 Transform:
   m_ObjectHideFlags: 0

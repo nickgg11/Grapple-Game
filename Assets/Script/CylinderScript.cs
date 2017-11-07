@@ -6,7 +6,7 @@ public class CylinderScript : MonoBehaviour {
     
     public Material[] materials;
     public string[] tagName;
-
+    public float telespawn = 998f;
     Renderer[] rend;
 	GameObject lavaFloor;
 	GameObject[] Children=new GameObject[10];
@@ -27,7 +27,7 @@ public class CylinderScript : MonoBehaviour {
          {
             Children[i]=(rend[i].gameObject);
             int temp = Random.Range(0, mat);
-            if (Random.Range(0, 1000) >998)
+            if (Random.Range(0, 1000) >telespawn)
             {
                 temp = 4;
             }

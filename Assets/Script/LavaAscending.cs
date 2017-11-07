@@ -36,7 +36,7 @@ public class LavaAscending : MonoBehaviour {
             transform.Translate(0f, ascendSpeed * Time.deltaTime, 0f, Space.World);
             if (player.transform.position.y - transform.position.y > 50)
             {
-                ascendSpeed = speedChange + Mathf.Pow(1.3f, (player.transform.position.y - transform.position.y) / 10f);
+                ascendSpeed = speedChange + Mathf.Pow(1.25f, (player.transform.position.y - transform.position.y) / 10f);
             }
             else
             {
